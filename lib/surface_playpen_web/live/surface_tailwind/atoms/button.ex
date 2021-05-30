@@ -3,10 +3,7 @@ defmodule SurfaceTailwind.Button do
   The standard **button**
   """
   use Surface.Component
-  alias SurfaceTailwind.Theme
-
-  @component_name :button
-  @themeable_props [:alignment, :padding, :margin, :border, :text, :text_size, :background, :ring]
+  alias SurfaceTailwind.Theme, as: T
 
   @doc """
   The button type, defaults to "button", mainly used for instances like modal X to close style buttons
@@ -58,12 +55,25 @@ defmodule SurfaceTailwind.Button do
       :on-click={{@click}}
       disabled={{@disabled}}
       value={{@value}}
-      class={{classes(assigns), @class}}>
+      class={{classes(assigns)}}>
       <slot>{{ @label }}</slot>
     </button>
     """
   end
 
-  def classes(assigns), do: Theme.classes(assigns, @component_name, @themeable_props)
+  def classes(assigns), do: T.build_class_list(assigns, &component_theme/1)
+
+  def component_theme(theme \\ :primary) when is_atom(theme) do
+    [
+      alignment: "inline-flex items-center justify-center",
+      padding: "px-4 py-2",
+      margin: "",
+      border: "border rounded-md #{T.value(theme, :main, :border)}",
+      text: "font-medium #{T.value(theme, :main, :contrast_text)} hover:#{T.value(theme, :dark, :contrast_text)}",
+      text_size: "text-base",
+      background: "#{T.value(theme, :main, :background)} hover:#{T.value(theme, :dark, :background)}",
+      ring: "focus:outline-none focus:ring-4 focus:#{T.value(theme, :main, :ring)}"
+    ]
+  end
 
 end

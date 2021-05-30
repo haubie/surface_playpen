@@ -71,7 +71,7 @@ defmodule SurfaceTailwind.Alert do
     T.build_class_list(assigns, &component_theme/1)
   end
 
-  def classes(assigns), do: T.build_class_list(assigns, &component_theme/1)
+  # def classes(assigns), do: T.build_class_list(assigns, &component_theme/1)
 
   # For the component author to define the component's theme.
   # The first parameter is an atom representing a theme definition at the global level.

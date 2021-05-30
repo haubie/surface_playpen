@@ -1,29 +1,26 @@
 defmodule SurfaceTailwind.Theme do
 
-  # @palette [
-  #   # secondary: [
-  #   #   main: "blue-700",
-  #   #   light: "blue-400",
-  #   #   dark: "blue-900"
-  #   # ],
-  #   # neutral: [
-  #   #   main: "gray-500"
-  #   # ],
-  #   # error: [
-  #   #   main: "pink-900"
-  #   # ],
-  #   # warning:  [
-  #   #   main: "blue-700"
-  #   # ],
-  #   # info:  [
-  #   #   main: "blue-700"
-  #   # ],
-  #   # success:  [
-  #   #   main: "blue-700"
-  #   # ]
-  # ]
-
-  def get_palette do
+  # A nested keyword list which defines the global theme styles.
+  # Component authors can incorporate these values into their component
+  # though the SurfaceTailwind.Theme.value/2 function.
+  # This is usually used in a SurfaceTailwind component in the following function:
+  #
+  # alias SurfaceTailwind.Theme, as: T
+  # def component_theme(theme \\ :primary) when is_atom(theme) do
+  #   [
+  #     alignment: "inline-flex items-center justify-center",
+  #     padding: "px-4 py-2",
+  #     margin: "",
+  #     border: "border rounded-md #{T.value(theme, :main, :border)}",
+  #     text: "font-medium #{T.value(theme, :main, :contrast_text)} hover:#{T.value(theme, :dark, :contrast_text)}",
+  #     text_size: "text-base",
+  #     background: "#{T.value(theme, :main, :background)} hover:#{T.value(theme, :dark, :background)}",
+  #     ring: "focus:outline-none focus:ring-4 focus:#{T.value(theme, :main, :ring)}"
+  #   ]
+  # end
+  #
+  # This function describes the theme for the component, and how global theme stules should be merged in.
+  def get_theme() do
     [
         primary: [
           main: [
@@ -121,7 +118,7 @@ defmodule SurfaceTailwind.Theme do
             ring: "ring-pink-500",
           ]
         ],
-        warn: [
+        warning: [
           main: [
             background: "bg-yellow-600",
             text: "bg-yellow-700",
@@ -129,101 +126,52 @@ defmodule SurfaceTailwind.Theme do
             border: "border-transparent",
             ring: "ring-pink-500",
           ]
+        ],
+        success: [
+          main: [
+            background: "bg-green-600",
+            text: "bg-green-700",
+            contrast_text: "text-white",
+            border: "border-transparent",
+            ring: "ring-pink-500",
+          ]
         ]
-
     ]
   end
 
+  # Gets the value from the global theme configuration.
+  # theme_key is used to represent a group, of values, like the :primary or : secondary colour pallet.
+  # type represents the sub-grouping, such as :main, :dark or :light. By convention, there is at least a :main
+  # element represents the specific element you're requesting the value for. For example, :background for the background styles,
+  # :contrast_text for the style that will work with the best contrast if used on the background, etc.
+  def value(theme_key, type, element), do: get_in(get_theme(), [theme_key, type, element])
 
-  def get_theme(pallet \\ :primary) when is_atom(pallet) do
-    IO.puts "GLOBAL GET_THEME"
-    [
-      button: [
-        alignment: "inline-flex items-center justify-center",
-        padding: "px-4 py-2",
-        margin: "",
-        border: "border rounded-md #{color(pallet, :main, :border)}",
-        text: "font-medium #{color(pallet, :main, :contrast_text)} hover:#{color(pallet, :dark, :contrast_text)}",
-        text_size: "text-base",
-        background: "#{color(pallet, :main, :background)} hover:#{color(pallet, :dark, :background)}",
-        ring: "focus:outline-none focus:ring-4 focus:#{color(pallet, :main, :ring)}"
-      ],
-      # alert: [
-      #   size: "w-full",
-      #   alignment: "inline-flex items-center justify-left",
-      #   padding: "px-4 py-5",
-      #   margin: "",
-      #   border: "border #{color(pallet, :main, :border)}",
-      #   text: "font-semibold #{color(pallet, :main, :contrast_text)}",
-      #   text_size: "text-base",
-      #   background: "#{color(pallet, :main, :background)} hover:#{color(pallet, :dark, :background)}",
-      #   ring: "focus:outline-none focus:ring-4 focus:#{color(pallet, :main, :ring)}",
-      #   icon: value(pallet, :main, :icon)
-      # ]
-    ]
-  end
-
-  def get_theme(pallet) when is_binary(pallet), do: get_theme(String.to_atom(pallet))
-
-  def color(palette_name, type, element), do: get_in(get_palette(), [palette_name, type, element])
-  def value(palette_name, type, element), do: get_in(get_palette(), [palette_name, type, element])
-
-  def component(component, property), do: get_in(get_theme(), [component, property])
-  def component(component, property, theme), do: get_in(get_theme(theme), [component, property])
-
-  def classes(assigns, component_name, themable_props) do
-
-    theme = if (assigns.disabled != true), do: assigns.theme, else: :disabled
-
-    {overridden_class_list, theme_class_list} =
-      themable_props
-      |> Enum.split_with(fn class_group -> if Map.get(assigns, class_group) != nil, do: true, else: false end)
-
-    classes_from_theme =
-      theme_class_list
-      |> Enum.map(fn class_group -> component(component_name, class_group, theme) end)
-
-    classes_from_component_user =
-      overridden_class_list
-      |> Enum.map(fn class_group -> Map.get(assigns, class_group) end)
-
-    classes_from_theme ++ classes_from_component_user
-  end
-
-
-
-  # updated to recieve a components theme keyword list as a function
-
-  def build_class_list(assigns, theme_function) do
-
-    themable_props = theme_function.(nil) |> Keyword.keys()
-
+  # Used within a component to build the classes to be attached to the component.
+  # assigns is the assigns of the component and is used to access a component's props.
+  # component_theme_fn takes a function which holds the theme definition for the component. It must return a key-value list.
+  def build_class_list(assigns, component_theme_fn) do
     selected_theme = if Map.has_key?(assigns, :disabled) and (assigns.disabled == true), do: :disabled, else: assigns.theme
 
+    themable_props = component_theme_fn.(nil) |> Keyword.keys()
     {overridden_class_list, theme_class_list} =
       themable_props
       |> Enum.split_with(fn class_group -> if Map.get(assigns, class_group) != nil, do: true, else: false end)
 
-    # classes_from_theme =
-    #   theme_class_list
-    #   |> Enum.map(fn class_group -> theme_value(class_group, selected_theme) end)
-
-    classes_from_theme =
+    classes_from_component_theme =
       theme_class_list
-      |> Enum.map(fn class_group -> theme_value_with_fun(class_group, selected_theme, theme_function) end)
+      |> Enum.map(fn class_group -> component_theme_value(class_group, selected_theme, component_theme_fn) end)
 
     classes_from_component_user =
       overridden_class_list
       |> Enum.map(fn class_group -> Map.get(assigns, class_group) end)
 
-    classes_from_theme ++ classes_from_component_user ++ assigns.class
+    classes_from_component_theme ++ classes_from_component_user ++ [assigns.class] |> List.flatten()
   end
 
-  defp theme_value_with_fun(property, theme, theme_func) do
-      theme_data = theme_func.(theme)
+  # Extracts the value of a property from the component's theme definition function
+  defp component_theme_value(property, theme, component_theme_fn) do
+      theme_data = component_theme_fn.(theme)
       get_in(theme_data, [property])
   end
-
-
 
 end
