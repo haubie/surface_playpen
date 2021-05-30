@@ -63,12 +63,13 @@ defmodule SurfaceTailwind.Button do
 
   def classes(assigns), do: T.build_class_list(assigns, &component_theme/1)
 
-  def component_theme(theme \\ :primary) when is_atom(theme) do
+  def component_theme(theme \\ :primary) do
     [
       alignment: "inline-flex items-center justify-center",
       padding: "px-4 py-2",
       margin: "",
       border: "border rounded-md #{T.value(theme, :main, :border)}",
+      border_radius: T.value(:general, :style, :border_radius),
       text: "font-medium #{T.value(theme, :main, :contrast_text)} hover:#{T.value(theme, :dark, :contrast_text)}",
       text_size: "text-base",
       background: "#{T.value(theme, :main, :background)} hover:#{T.value(theme, :dark, :background)}",

@@ -22,6 +22,11 @@ defmodule SurfaceTailwind.Theme do
   # This function describes the theme for the component, and how global theme stules should be merged in.
   def get_theme() do
     [
+        general: [
+          style: [
+            border_radius: "rounded-md",
+          ]
+        ],
         primary: [
           main: [
             background: "bg-blue-700",

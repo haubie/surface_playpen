@@ -14,13 +14,13 @@ defmodule SurfacePlaypenWeb.PageLive do
   def render(assigns) do
     ~H"""
     <div class="m-12">
-      <Alert class="my-4">This is a special message.</Alert>
+      <Alert class="my-4">Default alert with the info styling.</Alert>
 
-      <Alert type={{:warn}} class="my-4">This is a special message.</Alert>
+      <Alert type={{:warning}} class="my-4">Warning alert styling.</Alert>
 
-      <Alert type={{:error}} class="my-4">This is a special message.</Alert>
+      <Alert type={{:error}} class="my-4">Error alert styling.</Alert>
 
-      <Alert type={{:error}} theme={{:neutral}} disabled=true class="my-4" border="border-8 border-blue-900">This is a special message.</Alert>
+      <Alert type={{:error}} class="my-4" border="border-8 border-blue-900">Error alert styling with overriding of Tailwind CSS border classes.</Alert>
     </div>
 
 
@@ -51,7 +51,7 @@ defmodule SurfacePlaypenWeb.PageLive do
 
       <Button text_size="text-xs">Default</Button>
       </div>
-      <p class="mt-4">Disabled</p>
+      <p class="mt-4">Button disabled</p>
       <Button class="my-4" disabled={{true}}>Disabled theme</Button>
 
       <p class="mt-4">Neutral</p>
