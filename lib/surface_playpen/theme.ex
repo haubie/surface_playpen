@@ -126,7 +126,7 @@ defmodule SurfaceTailwind.Theme do
             background: "bg-yellow-600",
             text: "bg-yellow-700",
             contrast_text: "text-white",
-            border: "",
+            border: "border-transparent",
             ring: "ring-pink-500",
           ]
         ]
@@ -136,6 +136,7 @@ defmodule SurfaceTailwind.Theme do
 
 
   def get_theme(pallet \\ :primary) when is_atom(pallet) do
+    IO.puts "GLOBAL GET_THEME"
     [
       button: [
         alignment: "inline-flex items-center justify-center",
@@ -147,18 +148,18 @@ defmodule SurfaceTailwind.Theme do
         background: "#{color(pallet, :main, :background)} hover:#{color(pallet, :dark, :background)}",
         ring: "focus:outline-none focus:ring-4 focus:#{color(pallet, :main, :ring)}"
       ],
-      alert: [
-        size: "w-full",
-        alignment: "inline-flex items-center justify-left",
-        padding: "px-4 py-5",
-        margin: "",
-        border: "border #{color(pallet, :main, :border)}",
-        text: "font-semibold #{color(pallet, :main, :contrast_text)}",
-        text_size: "text-base",
-        background: "#{color(pallet, :main, :background)} hover:#{color(pallet, :dark, :background)}",
-        ring: "focus:outline-none focus:ring-4 focus:#{color(pallet, :main, :ring)}",
-        icon: value(pallet, :main, :icon)
-      ]
+      # alert: [
+      #   size: "w-full",
+      #   alignment: "inline-flex items-center justify-left",
+      #   padding: "px-4 py-5",
+      #   margin: "",
+      #   border: "border #{color(pallet, :main, :border)}",
+      #   text: "font-semibold #{color(pallet, :main, :contrast_text)}",
+      #   text_size: "text-base",
+      #   background: "#{color(pallet, :main, :background)} hover:#{color(pallet, :dark, :background)}",
+      #   ring: "focus:outline-none focus:ring-4 focus:#{color(pallet, :main, :ring)}",
+      #   icon: value(pallet, :main, :icon)
+      # ]
     ]
   end
 
@@ -188,5 +189,41 @@ defmodule SurfaceTailwind.Theme do
 
     classes_from_theme ++ classes_from_component_user
   end
+
+
+
+  # updated to recieve a components theme keyword list as a function
+
+  def build_class_list(assigns, theme_function) do
+
+    themable_props = theme_function.(nil) |> Keyword.keys()
+
+    selected_theme = if Map.has_key?(assigns, :disabled) and (assigns.disabled == true), do: :disabled, else: assigns.theme
+
+    {overridden_class_list, theme_class_list} =
+      themable_props
+      |> Enum.split_with(fn class_group -> if Map.get(assigns, class_group) != nil, do: true, else: false end)
+
+    # classes_from_theme =
+    #   theme_class_list
+    #   |> Enum.map(fn class_group -> theme_value(class_group, selected_theme) end)
+
+    classes_from_theme =
+      theme_class_list
+      |> Enum.map(fn class_group -> theme_value_with_fun(class_group, selected_theme, theme_function) end)
+
+    classes_from_component_user =
+      overridden_class_list
+      |> Enum.map(fn class_group -> Map.get(assigns, class_group) end)
+
+    classes_from_theme ++ classes_from_component_user ++ assigns.class
+  end
+
+  defp theme_value_with_fun(property, theme, theme_func) do
+      theme_data = theme_func.(theme)
+      get_in(theme_data, [property])
+  end
+
+
 
 end
