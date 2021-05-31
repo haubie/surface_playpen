@@ -54,17 +54,18 @@ defmodule SurfaceTailwind.Alert do
       aria-label={{@aria_label}}
       :on-click={{@click}}
       value={{@value}}
-      class={{classes(assigns)}}>
-      <div class="w-12 h-12
-                  rounded-full
-                  bg-white bg-opacity-20
-                  flex flex-col
-                  justify-center items-center
-                  mr-3">{{icon(@type)}}</div>
-      <div class="flex-1">
-      <slot>{{ @label }}</slot>
-      </div>
-      <div class="w-6 opacity-60">{{icon(:cross)}}</div>
+      class={{classes(assigns),"space-x-3"}}>
+        <div class="w-12 h-12
+                    rounded-full
+                    bg-white bg-opacity-20
+                    flex flex-col
+                    justify-center items-center">
+                    {{icon(@type)}}
+        </div>
+        <div class="flex-1">
+          <slot>{{ @label }}</slot>
+        </div>
+        <div class="w-8 opacity-60">{{icon(:cross)}}</div>
     </div>
     """
   end

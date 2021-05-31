@@ -1,5 +1,6 @@
 defmodule SurfacePlaypenWeb.Router do
   use SurfacePlaypenWeb, :router
+  import Surface.Catalogue.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -38,6 +39,13 @@ defmodule SurfacePlaypenWeb.Router do
     scope "/" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: SurfacePlaypenWeb.Telemetry
+    end
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue "/catalogue"
     end
   end
 end
