@@ -24,53 +24,44 @@ defmodule SurfaceTailwind.Theme do
     [
         general: [
           style: [
-            border_radius: "rounded-md",
+            border_radius: "rounded-md"
           ]
         ],
         primary: [
           main: [
             background: "bg-blue-700",
+            background_hover: "hover:bg-blue-900",
             text: "text-blue-700",
             contrast_text: "text-white",
+            contrast_text_hover: "hover:text-white",
             border: "border-transparent",
-            ring: "ring-pink-600"
+            ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ],
           dark: [
             background: "bg-blue-900",
             text: "text-blue-900",
             contrast_text: "text-white",
+            contrast_text_hover: "hover:text-white",
             border: "border-blue-800",
-            ring: "ring-pink-600"
+            ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ],
           light: [
             background: "bg-blue-50",
             text: "text-blue-400",
             contrast_text: "text-white",
             border: "border-blue-400",
-            ring: "ring-pink-600"
+            ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ]
         ],
         secondary: [
           main: [
-            background: "bg-blue-50 seco",
+            background: "bg-blue-50",
+            background_hover: "hover:bg-blue-500",
             text: "text-blue-700",
             contrast_text: "text-blue-700",
+            contrast_text_hover: "hover:text-white",
             border: "border-blue-700",
-            ring: "ring-pink-600"
-          ],
-          dark: [
-            background: "bg-blue-500",
-            text: "text-blue-800",
-            contrast_text: "text-white",
-            border: "border-blue-800",
-            ring: "ring-pink-600"
-          ],
-          light: [
-            background: "bg-blue-100",
-            text: "text-blue-400",
-            contrast_text: "text-blue-700",
-            border: "border-blue-100",
-            ring: "ring-pink-600"
+            ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ]
         ],
         disabled: [
@@ -79,30 +70,18 @@ defmodule SurfaceTailwind.Theme do
             text: "text-gray-700",
             contrast_text: "text-gray-400",
             border: "border-gray-200",
-            ring: "ring-pink-600"
+            ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ]
         ],
         neutral: [
           main: [
             background: "bg-gray-100",
+            background_hover: "hover:bg-gray-500",
             text: "text-gray-700",
             contrast_text: "text-gray-700",
+            contrast_text_hover: "hover:text-white",
             border: "border-gray-500",
-            ring: "ring-pink-600"
-          ],
-          dark: [
-            background: "bg-gray-500",
-            text: "text-gray-800",
-            contrast_text: "text-white",
-            border: "border-gray-800",
-            ring: "ring-pink-600"
-          ],
-          light: [
-            background: "bg-gray-100",
-            text: "text-gray-400",
-            contrast_text: "text-gray-700",
-            border: "border-gray-100",
-            ring: "ring-pink-600"
+            ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ]
         ],
         error: [

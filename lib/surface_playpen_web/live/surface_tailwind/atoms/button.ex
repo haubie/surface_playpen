@@ -67,13 +67,12 @@ defmodule SurfaceTailwind.Button do
     [
       alignment: "inline-flex items-center justify-center",
       padding: "px-4 py-2",
-      margin: "",
-      border: "border rounded-md #{T.value(theme, :main, :border)}",
+      border: ["border rounded-md", T.value(theme, :main, :border)],
       border_radius: T.value(:general, :style, :border_radius),
-      text: "font-medium #{T.value(theme, :main, :contrast_text)} hover:#{T.value(theme, :dark, :contrast_text)}",
+      text: ["font-medium", T.value(theme, :main, :contrast_text), T.value(theme, :main, :contrast_text_hover)],
       text_size: "text-base",
-      background: "#{T.value(theme, :main, :background)} hover:#{T.value(theme, :dark, :background)}",
-      ring: "focus:outline-none focus:ring-4 focus:#{T.value(theme, :main, :ring)}"
+      background: [T.value(theme, :main, :background), T.value(theme, :main, :background_hover)],
+      ring: T.value(theme, :main, :ring)
     ]
   end
 

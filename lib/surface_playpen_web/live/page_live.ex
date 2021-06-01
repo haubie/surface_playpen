@@ -2,7 +2,6 @@ defmodule SurfacePlaypenWeb.PageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfacePlaypenWeb.{TriviaCard,Heading}
   alias SurfaceTailwind.{Button,Alert,Grid}
 
   @impl true
@@ -15,16 +14,12 @@ defmodule SurfacePlaypenWeb.PageLive do
     ~H"""
 
     <h1 class="text-xl">Grid</h1>
-    <Grid gap="4" margin="m-12">
+    <Grid>
       <Alert>Default alert with the info styling.</Alert>
-
-      <Alert>Default alert with the info styling. <a href="#" class="px-2 underline hover:no-underline">Find out more &rarr;</a></Alert>
 
       <Alert type={{:warning}}>Warning alert styling.</Alert>
 
       <Alert type={{:error}}>Error alert styling.</Alert>
-
-      <Alert type={{:error}} border="border-8 border-blue-900">Error alert styling with overriding of Tailwind CSS border classes.</Alert>
     </Grid>
 
 
