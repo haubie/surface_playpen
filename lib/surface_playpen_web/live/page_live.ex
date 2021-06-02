@@ -2,7 +2,7 @@ defmodule SurfacePlaypenWeb.PageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{Button,Alert,Grid}
+  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -12,6 +12,40 @@ defmodule SurfacePlaypenWeb.PageLive do
   @impl true
   def render(assigns) do
     ~H"""
+
+    Types of separator:
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}}/>
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} separator="cheveron"/>
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} separator="slash"/>
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} separator="divider"/>
+
+    Colourful:
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} bordered=true border="border border-blue-600" border_radius="rounded-full" shadow="shadow-none" text="text-blue-600" background="bg-gradient-to-tl from-red-50 to-indigo-50"/>
+
+    Add theme border
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} bordered=true/>
+
+    Full width and bordered
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} separator="divider" bordered=true full_width=true/>
+
+    Text colour
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} text="text-blue-500 hover:text-blue-900"/>
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} text="text-pink-500 hover:text-pink-900"/>
+    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} text="text-green-500 hover:text-green-900"/>
+
+
+
+
+    <div class="m-12 space-y-8">
+      <Breadcrumb crumbs={{[%{name: "Text 1", href: "#"}, %{name: "Text 2", href: "#"}, %{name: "Text 2"}]}} separator="slash" />
+
+      <Breadcrumb crumbs={{[%{name: "Text 1", href: "#"}, %{name: "Text 2", href: "#"}, %{name: "Text 2"}]}} separator="divider" />
+
+    </div>
+
+
+
+
 
     <h1 class="text-xl">Grid</h1>
     <Grid>

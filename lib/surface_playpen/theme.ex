@@ -78,9 +78,12 @@ defmodule SurfaceTailwind.Theme do
             background: "bg-gray-100",
             background_hover: "hover:bg-gray-500",
             text: "text-gray-700",
+            light_text: "text-gray-400",
+            light_text_hover: "hover:text-gray-700",
             contrast_text: "text-gray-700",
             contrast_text_hover: "hover:text-white",
-            border: "border-gray-500",
+            border: "border border-gray-500",
+            border_light: "border border-gray-300",
             ring: "ring-pink-600 focus:outline-none focus:ring-4"
           ]
         ],

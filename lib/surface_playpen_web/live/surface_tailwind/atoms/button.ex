@@ -61,13 +61,14 @@ defmodule SurfaceTailwind.Button do
     """
   end
 
+  @spec classes(%{:class => any, optional(any) => any}) :: list
   def classes(assigns), do: T.build_class_list(assigns, &component_theme/1)
 
   def component_theme(theme \\ :primary) do
     [
       alignment: "inline-flex items-center justify-center",
       padding: "px-4 py-2",
-      border: ["border rounded-md", T.value(theme, :main, :border)],
+      border: ["border", T.value(theme, :main, :border)],
       border_radius: T.value(:general, :style, :border_radius),
       text: ["font-medium", T.value(theme, :main, :contrast_text), T.value(theme, :main, :contrast_text_hover)],
       text_size: "text-base",

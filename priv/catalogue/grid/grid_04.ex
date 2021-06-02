@@ -1,4 +1,4 @@
-defmodule SurfaceTailwind.Catalogue.Grid.Example05 do
+defmodule SurfaceTailwind.Catalogue.Grid.Example04 do
   use Surface.Catalogue.Example,
     subject: SurfaceTailwind.Grid,
     catalogue: SurfaceTailwind.Catalogue,
