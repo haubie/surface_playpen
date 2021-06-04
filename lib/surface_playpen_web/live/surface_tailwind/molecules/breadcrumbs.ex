@@ -13,6 +13,7 @@ defmodule SurfaceTailwind.Breadcrumb do
   prop separator_color, :css_class, default: "text-gray-200"
   prop full_width, :boolean, default: false
   prop padding, :css_class
+  prop margin, :css_class
   prop border, :css_class
   prop bordered, :boolean, default: false
   prop border_radius, :css_class
@@ -30,7 +31,7 @@ defmodule SurfaceTailwind.Breadcrumb do
   def render(assigns) do
     ~H"""
     <div>
-      <ol class={{classes(assigns, :top), classes(assigns, :bordered, @bordered), "w-full": @full_width}} itemscope itemtype="https://schema.org/BreadcrumbList">
+      <ol class={{classes(assigns, :top), classes(assigns, :bordered, @bordered), @margin, "w-full": @full_width}} itemscope itemtype="https://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="/" class={{classes(assigns, :link)}} itemprop="item">{{icon(:home)}}<span class="sr-only" itemprop="name">Home</span></a>
           <meta itemprop="position" content="1" />
@@ -64,16 +65,16 @@ defmodule SurfaceTailwind.Breadcrumb do
       background: "white",
       shadow: "shadow",
       padding: ["pl-7", "pr-8"],
-      border: T.value(theme, :main, :border_light),
-      border_radius: T.value(:general, :style, :border_radius),
+      border: T.value(theme, :border_light),
+      border_radius: T.value(:general, :border_radius),
     ]
   end
 
   def link_theme(theme) do
     [
       text: [
-        T.value(theme, :main, :light_text),
-        T.value(theme, :main, :light_text_hover)]
+        T.value(theme, :light_text),
+        T.value(theme, :light_text_hover)]
     ]
   end
 

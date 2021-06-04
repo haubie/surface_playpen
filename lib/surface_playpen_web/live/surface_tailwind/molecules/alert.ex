@@ -90,13 +90,13 @@ defmodule SurfaceTailwind.Alert do
       size: "w-full",
       alignment: "inline-flex items-center justify-left",
       padding: "px-3 py-3",
-      border: ["border", T.value(theme, :main, :border)],
-      border_radius: T.value(:general, :style, :border_radius),
-      text: ["font-semibold", T.value(theme, :main, :contrast_text)],
+      border: ["border", T.value(theme, :border)],
+      border_radius: T.value(:general, :border_radius),
+      text: ["font-semibold", T.value(theme, :contrast_text)],
       text_size: "text-base",
-      background: [T.value(theme, :main, :background), T.value(theme, :main, :background_hover)],
-      ring: ["focus:outline-none focus:ring-4", T.value(theme, :main, :ring)],
-      icon: T.value(theme, :main, :icon),
+      background: [T.value(theme, :background), T.value(theme, :background_hover)],
+      ring: ["focus:outline-none focus:ring-4", T.value(theme, :ring)],
+      icon: T.value(theme, :icon),
       shadow: "shadow-lg"
     ]
   end

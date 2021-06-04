@@ -23,105 +23,84 @@ defmodule SurfaceTailwind.Theme do
   def get_theme() do
     [
         general: [
-          style: [
-            border_radius: "rounded-md"
-          ]
+          border_radius: "rounded-md",
+          ring: "ring-pink-600 focus:outline-none focus:ring-4",
+          background: "bg-gray-50"
         ],
         primary: [
-          main: [
-            background: "bg-blue-700",
-            background_hover: "hover:bg-blue-900",
-            text: "text-blue-700",
-            contrast_text: "text-white",
-            contrast_text_hover: "hover:text-white",
-            border: "border-transparent",
-            ring: "ring-pink-600 focus:outline-none focus:ring-4"
-          ],
-          dark: [
-            background: "bg-blue-900",
-            text: "text-blue-900",
-            contrast_text: "text-white",
-            contrast_text_hover: "hover:text-white",
-            border: "border-blue-800",
-            ring: "ring-pink-600 focus:outline-none focus:ring-4"
-          ],
-          light: [
-            background: "bg-blue-50",
-            text: "text-blue-400",
-            contrast_text: "text-white",
-            border: "border-blue-400",
-            ring: "ring-pink-600 focus:outline-none focus:ring-4"
-          ]
+          background: "bg-indigo-700",
+          background_hover: "hover:bg-indigo-900",
+          text: "text-indgo-700",
+          contrast_text: "text-white",
+          contrast_text_hover: "hover:text-white",
+          border: "border-transparent",
+          ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
         secondary: [
-          main: [
-            background: "bg-blue-50",
-            background_hover: "hover:bg-blue-500",
-            text: "text-blue-700",
-            contrast_text: "text-blue-700",
-            contrast_text_hover: "hover:text-white",
-            border: "border-blue-700",
-            ring: "ring-pink-600 focus:outline-none focus:ring-4"
-          ]
+          background: "bg-blue-50",
+          background_hover: "hover:bg-blue-500",
+          text: "text-blue-700",
+          contrast_text: "text-blue-700",
+          contrast_text_hover: "hover:text-white",
+          border: "border-blue-700",
+          ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
         disabled: [
-          main: [
-            background: "bg-gray-50",
-            text: "text-gray-700",
-            contrast_text: "text-gray-400",
-            border: "border-gray-200",
-            ring: "ring-pink-600 focus:outline-none focus:ring-4"
-          ]
+          background: "bg-gray-50",
+          text: "text-gray-700",
+          contrast_text: "text-gray-400",
+          border: "border-gray-200",
+          ring: "ring-pink-600 focus:outline-none focus:ring-4"
         ],
         neutral: [
-          main: [
-            background: "bg-gray-100",
-            background_hover: "hover:bg-gray-500",
-            text: "text-gray-700",
-            light_text: "text-gray-400",
-            light_text_hover: "hover:text-gray-700",
-            contrast_text: "text-gray-700",
-            contrast_text_hover: "hover:text-white",
-            border: "border border-gray-500",
-            border_light: "border border-gray-300",
-            ring: "ring-pink-600 focus:outline-none focus:ring-4"
-          ]
+          background: "bg-gray-100",
+          background_hover: "hover:bg-gray-500",
+          text: "text-gray-700",
+          light_text: "text-gray-400",
+          light_text_hover: "hover:text-gray-700",
+          contrast_text: "text-gray-700",
+          contrast_text_hover: "hover:text-white",
+          border: "border border-gray-500",
+          border_light: "border border-gray-300",
+          ring: "ring-pink-600 focus:outline-none focus:ring-4"
         ],
         error: [
-          main: [
             background: "bg-red-700",
             text: "bg-red-700",
             contrast_text: "text-white",
             border: "",
-            ring: "ring-blue-500",
-          ]
+            ring: "ring-blue-500"
         ],
         info: [
-          main: [
             background: "bg-blue-700",
             text: "bg-blue-700",
             contrast_text: "text-white",
             border: "",
-            ring: "ring-pink-500",
-          ]
+            ring: "ring-pink-500"
         ],
         warning: [
-          main: [
             background: "bg-yellow-600",
             text: "bg-yellow-700",
             contrast_text: "text-white",
             border: "border-transparent",
             ring: "ring-pink-500",
-          ]
         ],
         success: [
-          main: [
             background: "bg-green-600",
+            background_hover: "hover:bg-green-700",
             text: "bg-green-700",
             contrast_text: "text-white",
             border: "border-transparent",
             ring: "ring-pink-500",
-          ]
+        ],
+        menu: [
+          background: "bg-gray-800",
+          background_hover: "hover:bg-pink-700",
+          text: "text-blue-700",
+          contrast_text: "text-white",
+          contrast_text_hover: "hover:text-white",
+          border: "border-transparent",
+          ring: "ring-pink-600 focus:outline-none focus:ring-4"
         ]
     ]
   end
@@ -131,7 +110,7 @@ defmodule SurfaceTailwind.Theme do
   # type represents the sub-grouping, such as :main, :dark or :light. By convention, there is at least a :main
   # element represents the specific element you're requesting the value for. For example, :background for the background styles,
   # :contrast_text for the style that will work with the best contrast if used on the background, etc.
-  def value(theme_key, type, element), do: get_in(get_theme(), [theme_key, type, element])
+  def value(theme_key, element), do: get_in(get_theme(), [theme_key, element])
 
   # Used within a component to build the classes to be attached to the component.
   # assigns is the assigns of the component and is used to access a component's props.

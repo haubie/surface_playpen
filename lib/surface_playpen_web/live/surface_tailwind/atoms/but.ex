@@ -1,4 +1,4 @@
-defmodule SurfaceTailwind.Button do
+defmodule SurfaceTailwind.But do
   @moduledoc """
   The standard **button**
   """
@@ -29,7 +29,7 @@ defmodule SurfaceTailwind.Button do
   @doc "Css classes to propagate down to button. Default class if no class supplied is simply _button_"
   prop class, :css_class
 
-  prop theme, :atom, default: :primary
+  prop theme, :string, default: "primary"
 
   prop alignment, :css_class
   prop padding, :css_class
@@ -62,19 +62,20 @@ defmodule SurfaceTailwind.Button do
     """
   end
 
+  @spec classes(%{:class => any, optional(any) => any}) :: list
   def classes(assigns), do: T.build_class_list(assigns, &component_theme/1)
 
-  def component_theme(theme \\ :primary) do
+  def component_theme(theme \\ "primary") do
     [
       alignment: "inline-flex items-center justify-center",
       padding: "px-4 py-2",
-      border: ["border", T.value(theme, :border)],
-      border_radius: T.value(:general, :border_radius),
-      text: ["font-medium", T.value(theme, :contrast_text), T.value(theme, :contrast_text_hover)],
+      border: ["border", T.value(theme, :main, :border)],
+      border_radius: T.value(:general, :style, :border_radius),
+      text: ["font-medium", T.value(theme, :main, :contrast_text), T.value(theme, :main, :contrast_text_hover)],
       text_size: "text-sm",
-      background: T.value(theme, :background),
-      background_hover: T.value(theme, :background_hover),
-      ring: T.value(theme, :ring)
+      background: T.value(theme, :main, :background),
+      background_hover: T.value(theme, :main, :background_hover),
+      ring: T.value(:general, :style, :ring)
     ]
   end
 
