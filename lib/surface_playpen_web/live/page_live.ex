@@ -2,7 +2,7 @@ defmodule SurfacePlaypenWeb.PageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb}
+  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Accordion,AccordionItem}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -12,6 +12,14 @@ defmodule SurfacePlaypenWeb.PageLive do
   @impl true
   def render(assigns) do
     ~H"""
+
+    Accordion
+    <Accordion id="faq_accordion">
+      <AccordionItem title="This is the title">Item 1</AccordionItem>
+      <AccordionItem title="Some other item">This is the second item</AccordionItem>
+    </Accordion>
+
+
 
     Types of separator:
     <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}}/>

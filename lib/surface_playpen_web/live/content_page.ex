@@ -2,7 +2,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification}
+  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Accordion,AccordionItem}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -55,6 +55,43 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       <h1 class="text-4xl">Title</h1>
       <span class="text-lg">Subtext here</span>
     </div>
+    <Grid gap="gap-8">
+
+    <Accordion id="faq_accordion" margin="my-8">
+      <AccordionItem title="This is the title">Item 1</AccordionItem>
+      <AccordionItem title="Some other item">This is the second item</AccordionItem>
+    </Accordion>
+
+
+    <Accordion id="faq_accordion_2" margin="my-8" theme={{:secondary}}>
+      <AccordionItem title="This is the title">Item 1</AccordionItem>
+      <AccordionItem title="Some other item">This is the second item</AccordionItem>
+    </Accordion>
+
+
+    <Accordion id="faq_accordion_3" margin="my-8" theme={{:secondary_varient}}>
+      <AccordionItem title="This is the title">Item 1</AccordionItem>
+      <AccordionItem title="Some other item">This is the second item</AccordionItem>
+    </Accordion>
+
+
+      <Accordion id="faq_accordion_4" margin="my-8" theme={{:neutral}}>
+        <AccordionItem title="This is the title">Item 1</AccordionItem>
+        <AccordionItem title="Some other item">This is the second item</AccordionItem>
+      </Accordion>
+
+      <Accordion id="faq_accordion_5" margin="my-8" theme={{:tertiary}}>
+        <AccordionItem title="This is the title">Item 1</AccordionItem>
+        <AccordionItem title="Some other item">This is the second item</AccordionItem>
+      </Accordion>
+    </Grid>
+
+
+
+
+
+
+
 
 
     <Notification title="Discussion archived">

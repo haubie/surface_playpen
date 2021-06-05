@@ -25,15 +25,17 @@ defmodule SurfaceTailwind.Theme do
         general: [
           border_radius: "rounded-md",
           ring: "ring-pink-600 focus:outline-none focus:ring-4",
-          background: "bg-gray-50"
+          background: "bg-gray-50",
+          border_color_primary: "border-indigo-900"
         ],
         primary: [
           background: "bg-indigo-700",
           background_hover: "hover:bg-indigo-900",
-          text: "text-indgo-700",
+          text: "text-indigo-900",
           contrast_text: "text-white",
           contrast_text_hover: "hover:text-white",
           border: "border-transparent",
+          border_accent: "border-indigo-700",
           ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
         primary_grad: [
@@ -43,15 +45,17 @@ defmodule SurfaceTailwind.Theme do
           contrast_text: "text-white",
           contrast_text_hover: "hover:text-white",
           border: "border-transparent",
+          border_accent: "border-indigo-700",
           ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
         secondary: [
           background: "bg-indigo-100",
           background_hover: "hover:bg-indigo-500",
-          text: "text-indigo-700",
+          text: "text-indigo-900",
           contrast_text: "text-indigo-700",
           contrast_text_hover: "hover:text-white",
           border: "border-transparent",
+          border_accent: "border-indigo-100",
           ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
         secondary_grad: [
@@ -66,10 +70,11 @@ defmodule SurfaceTailwind.Theme do
         secondary_varient: [
           background: "bg-white",
           background_hover: "hover:bg-indigo-50",
-          text: "text-indigo-700",
+          text: "text-indigo-900",
           contrast_text: "text-indigo-900",
           contrast_text_hover: "hover:text-indigo-800",
           border: "border-transparent",
+          border_accent: "border-indigo-900",
           ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
         neutral: [
@@ -83,6 +88,7 @@ defmodule SurfaceTailwind.Theme do
           border: "border-gray-300",
           border_hover: "hover:border-gray-500",
           border_light: "border-gray-300",
+          border_accent: "border-gray-800",
           ring: "ring-gray-300 focus:outline-none focus:ring-4"
         ],
         tertiary: [
@@ -92,6 +98,7 @@ defmodule SurfaceTailwind.Theme do
           contrast_text: "text-gray-500",
           contrast_text_hover: "hover:text-gray-800 hover:underline",
           border: "border-transparent",
+          border_accent: "border-gray-500",
           ring: "ring-gray-300 focus:outline-none focus:ring-4"
         ],
         disabled: [

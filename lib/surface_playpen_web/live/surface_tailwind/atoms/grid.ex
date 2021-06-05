@@ -22,7 +22,7 @@ defmodule SurfaceTailwind.Grid do
   def render(assigns) do
     ~H"""
     <div class={{"grid", @cols, @gap, @margin, @width, @class}}>
-      <slot></slot>
+      <slot/>
     </div>
     """
   end
