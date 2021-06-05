@@ -35,6 +35,7 @@ defmodule SurfaceTailwind.Button do
   prop padding, :css_class
   prop margin, :css_class
   prop border, :css_class
+  prop border_hover, :css_class
   prop text, :css_class
   prop text_size, :css_class
   prop background, :css_class
@@ -70,6 +71,7 @@ defmodule SurfaceTailwind.Button do
       padding: "px-4 py-2",
       border: ["border", T.value(theme, :border)],
       border_radius: T.value(:general, :border_radius),
+      border_hover: T.value(theme, :border_hover),
       text: ["font-medium", T.value(theme, :contrast_text), T.value(theme, :contrast_text_hover)],
       text_size: "text-sm",
       background: T.value(theme, :background),

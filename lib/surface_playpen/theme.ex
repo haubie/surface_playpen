@@ -36,32 +36,69 @@ defmodule SurfaceTailwind.Theme do
           border: "border-transparent",
           ring: "ring-indigo-300 focus:outline-none focus:ring-4"
         ],
-        secondary: [
-          background: "bg-blue-50",
-          background_hover: "hover:bg-blue-500",
-          text: "text-blue-700",
-          contrast_text: "text-blue-700",
+        primary_grad: [
+          background: "bg-gradient-to-b from-indigo-500 to-indigo-700",
+          background_hover: "hover:from-indigo-800 hover:to-indigo-900",
+          text: "text-indgo-700",
+          contrast_text: "text-white",
           contrast_text_hover: "hover:text-white",
-          border: "border-blue-700",
+          border: "border-transparent",
           ring: "ring-indigo-300 focus:outline-none focus:ring-4"
+        ],
+        secondary: [
+          background: "bg-indigo-100",
+          background_hover: "hover:bg-indigo-500",
+          text: "text-indigo-700",
+          contrast_text: "text-indigo-700",
+          contrast_text_hover: "hover:text-white",
+          border: "border-transparent",
+          ring: "ring-indigo-300 focus:outline-none focus:ring-4"
+        ],
+        secondary_grad: [
+          background: "bg-gradient-to-b from-indigo-100 to-indigo-200",
+          background_hover: "hover:from-indigo-400 hover:to-indigo-500",
+          text: "text-indigo-700",
+          contrast_text: "text-indigo-700",
+          contrast_text_hover: "hover:text-white",
+          border: "border-transparent",
+          ring: "ring-indigo-300 focus:outline-none focus:ring-4"
+        ],
+        secondary_varient: [
+          background: "bg-white",
+          background_hover: "hover:bg-indigo-50",
+          text: "text-indigo-700",
+          contrast_text: "text-indigo-900",
+          contrast_text_hover: "hover:text-indigo-800",
+          border: "border-transparent",
+          ring: "ring-indigo-300 focus:outline-none focus:ring-4"
+        ],
+        neutral: [
+          background: "bg-white",
+          background_hover: "",
+          text: "text-gray-900",
+          light_text: "text-gray-400",
+          light_text_hover: "hover:text-gray-600",
+          contrast_text: "text-gray-800",
+          contrast_text_hover: "hover:text-gray-900",
+          border: "border-gray-300",
+          border_hover: "hover:border-gray-500",
+          border_light: "border-gray-300",
+          ring: "ring-gray-300 focus:outline-none focus:ring-4"
+        ],
+        tertiary: [
+          background: "bg-white",
+          background_hover: "hover:bg-gray-50",
+          text: "text-gray-700",
+          contrast_text: "text-gray-500",
+          contrast_text_hover: "hover:text-gray-800 hover:underline",
+          border: "border-transparent",
+          ring: "ring-gray-300 focus:outline-none focus:ring-4"
         ],
         disabled: [
           background: "bg-gray-50",
           text: "text-gray-700",
           contrast_text: "text-gray-400",
           border: "border-gray-200",
-          ring: "ring-pink-600 focus:outline-none focus:ring-4"
-        ],
-        neutral: [
-          background: "bg-gray-100",
-          background_hover: "hover:bg-gray-500",
-          text: "text-gray-700",
-          light_text: "text-gray-400",
-          light_text_hover: "hover:text-gray-700",
-          contrast_text: "text-gray-700",
-          contrast_text_hover: "hover:text-white",
-          border: "border border-gray-500",
-          border_light: "border border-gray-300",
           ring: "ring-pink-600 focus:outline-none focus:ring-4"
         ],
         error: [

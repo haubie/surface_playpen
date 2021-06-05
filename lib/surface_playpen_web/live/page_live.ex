@@ -78,8 +78,30 @@ defmodule SurfacePlaypenWeb.PageLive do
       <p class="mt-4">Default with background and text overridden in prop</p>
       <Button background="bg-green-200 hover:bg-green-900" text="text-green-900 hover:text-white" class="my-4">Default + props</Button>
 
+      <p>Primary theme</p>
+      <Button theme={{:primary}} class="my-4">Primary theme</Button>
+
       <p>Secondary theme</p>
       <Button theme={{:secondary}} class="my-4">Secondary theme</Button>
+
+      <p>Secondary varient theme</p>
+      <Button theme={{:secondary_varient}} class="my-4">Secondary varient theme</Button>
+
+      <p>Neutral theme</p>
+      <Button theme={{:neutral}} class="my-4">Neutral theme</Button>
+
+      <p>Tertiary theme</p>
+      <Button theme={{:tertiary}} class="my-4">Tertiary theme</Button>
+
+      <p>Primary gradient theme</p>
+      <Button theme={{:primary_grad}} class="my-4">Primary grad theme</Button>
+
+      <p>Secondary gradient theme</p>
+      <Button theme={{:secondary_grad}} class="my-4">Secondary grad theme</Button>
+
+
+
+
 
       <p>Secondary theme with background and text overridden in prop</p>
       <Button theme={{:secondary}} background="bg-green-200 hover:bg-green-900" text="text-green-900 hover:text-white" class="my-4">Secondary theme + props</Button>
