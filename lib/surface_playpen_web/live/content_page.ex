@@ -55,6 +55,42 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       <h1 class="text-4xl">Title</h1>
       <span class="text-lg">Subtext here</span>
     </div>
+
+
+
+    <Notification title="No actions">
+      Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+      Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
+    <Notification title="Icon added" icon={{:tick}} class="mt-12">
+      Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+      Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
+    <Notification title="Bottom actions" icon={{:tick}} class="mt-12" action_location={{:bottom}}>
+      Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+      Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
+    <Notification title="Action right, single" icon={{:tick}} class="mt-12" action_location={{:right}}>
+      Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+      Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
+    <Notification title="No slot, title only, action to right" icon={{:tick}} class="mt-12" action_location={{:right}} class="absolute top-10 right-10" />
+
+    <Notification title="No slot, title only, no action" icon={{:tick}} class="mt-12" />
+
+    <Notification title="No slot, title only, no action" class="mt-12" />
+
+
+
+    <Notification title="Discussion archived" icon={{:tick}} class="mt-12" action_location={{:buttom}}>
+      Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+      Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
     <Grid gap="gap-8">
 
     <Accordion id="faq_accordion" margin="my-8">
@@ -94,10 +130,6 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
 
 
-    <Notification title="Discussion archived">
-      Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
-      Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
-    </Notification>
 
 
 

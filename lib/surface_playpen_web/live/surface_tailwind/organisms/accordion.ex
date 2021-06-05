@@ -23,7 +23,6 @@ defmodule SurfaceTailwind.Accordion do
 
   data active_item, :integer, default: nil
   data all_expanded, :boolean, default: false
-  data animation, :string, default: ""
 
   @doc """
   item
@@ -42,7 +41,7 @@ defmodule SurfaceTailwind.Accordion do
 
       <div :for.with_index={{ {accordion_item,i} <- @item }} class="border-t border-200 pb-5 hover:bg-gray-50">
         <a class="flex flex-row pt-7 pb-2 hover:underline" :on-click="item_click" phx-value-index={{ i }}>
-          <div class="flex-1 font-semibold text-lg text-gray-800 pr-2">{{accordion_item[:title]}}</div>
+          <div class={{"flex-1 font-semibold text-lg text-gray-800 pr-2", classes(assigns, :question)}}>{{accordion_item[:title]}}</div>
           <div class="w-12 flex flex-row justify-end text-gray-400">
             <span :if={{@all_expanded or @active_item == i}} :on-click="item_click" phx-value-index={{ i }}>{{icon(:up)}}</span>
             <span :if={{not (@all_expanded or @active_item == i)}} :on-click="item_click" phx-value-index={{ i }}>{{icon(:down)}}</span>
@@ -50,7 +49,7 @@ defmodule SurfaceTailwind.Accordion do
         </a>
         <div>
         </div>
-        <div class={{"text-gray-500 pr-16", @animation }} :show={{@all_expanded or (@active_item == i)}}>
+        <div class={{"text-gray-500 pr-16"}} :show={{@all_expanded or (@active_item == i)}}>
           <slot name="item" index={{i}} />
         </div>
       </div>
@@ -62,38 +61,23 @@ defmodule SurfaceTailwind.Accordion do
 
   def handle_event("item_click", %{"index" => index_str}, socket) do
     index = String.to_integer(index_str)
-    animation = next_animation(socket.assigns, index)
     index = if socket.assigns.active_item == index, do: nil, else: index
 
-    {:noreply, assign(socket, active_item: index, animation: "")}
+    {:noreply, assign(socket, active_item: index)}
   end
 
   def handle_event("expand_all", _, socket) do
-    # animation = next_animation(socket.assigns, index)
     {:noreply, assign(socket, all_expanded: true)}
   end
 
   def handle_event("collapse_all", _, socket) do
-    # animation = next_animation(socket.assigns, index)
     {:noreply, assign(socket, all_expanded: false, active_item: nil)}
   end
 
-  defp next_animation(assigns, clicked_index) do
-    %{animation: animation, active_item: active_item} = assigns
 
-    cond do
-      clicked_index == active_item ->
-        "scale-y-100"
-
-      clicked_index != active_item ->
-        "scale-y-0"
-
-      true ->
-        animation
-    end
-  end
 
   def classes(assigns, :header), do: T.build_class_list(assigns, &header_theme/1)
+  def classes(assigns, :question), do: T.build_class_list(assigns, &question_theme/1)
 
   # def classes(assigns, :top), do: T.build_class_list(assigns, &component_theme/1)
   # def classes(assigns, :link), do: T.build_class_list(assigns, &link_theme/1)
@@ -106,6 +90,12 @@ defmodule SurfaceTailwind.Accordion do
     text_color: T.value(theme, :text),
     border: ["border-b-4", T.value(theme, :border_accent)]
   ]
+  end
+
+  def question_theme(theme) do
+    [
+      text_color: T.value(theme, :text_dark),
+    ]
   end
 
 
