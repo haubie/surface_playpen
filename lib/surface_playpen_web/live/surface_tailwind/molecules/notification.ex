@@ -9,6 +9,9 @@ defmodule SurfaceTailwind.Notification do
   # @doc "Css classes to propagate to the breadcrumbs's top level element <div>."
   # prop theme, :atom, default: :neutral
   prop class, :css_class
+  prop action, :event
+  prop secondary_action, :event
+
   # prop background, :css_class
   # prop separator, :string, default: "cheveron", values: ["cheveron", "slash", "divider"]
   # prop separator_color, :css_class, default: "text-gray-200"
@@ -24,7 +27,7 @@ defmodule SurfaceTailwind.Notification do
 
   # prop crumbs, :list, required: true
 
-  prop action_location, :atom, values: [:bottom, :right]
+  prop action_location, :atom, values: [:bottom, :right, :inline]
 
   prop icon, :atom, default: nil
 
@@ -37,6 +40,13 @@ defmodule SurfaceTailwind.Notification do
 
   def render(assigns) do
     ~H"""
+    <div class="my-5">
+      <p class="font-semibold">Props</p>
+      action_location: is nil? <pre>{{@action_location == nil}}</pre>
+      action_location: is :bottom? <pre>{{@action_location == :bottom}}</pre>
+      action_location: is :right? <pre>{{@action_location == :right}}</pre>
+      action_location: <pre>{{@action_location}}</pre>
+    </div>
     <div class={{["border border-gray-200 shadow-lg bg-white rounded-lg max-w-sm flex flex-row space-x-3", @class]}}>
       <div :if={{@icon}} class={{ "flex-none flex flex-row justify-start text-green-500 py-4 pl-4", "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}}>
         {{icon(@icon)}}
@@ -46,20 +56,20 @@ defmodule SurfaceTailwind.Notification do
         <p :if={{assigns[:default]}} class="text-gray-500 font-light text-sm"><slot/></p>
 
         <div :if={{@action_location == :bottom}} class="flex flex-row space-x-4 pt-1">
-          <Button theme={{:primary}}>Accept</Button>
-          <Button theme={{:neutral}}>Decline</Button>
+          <Button theme={{:primary}} click={{@action}} >Accept</Button>
+          <Button :if={{@secondary_action}} theme={{:neutral}} click={{@secondary_action}} >Decline</Button>
         </div>
       </div>
       <div class={{"flex-none flex flex-row justify-end text-gray-400 py-4 pr-4", "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}}>
-        <div :if={{@action_location == :right}}>
-          <Button theme={{:secondary_varient}}>Undo</Button>
+        <div :if={{@action_location == :inline}}>
+          <Button theme={{:secondary_varient}} click={{@action}} class="mr-2">Undo</Button>
         </div>
         <!-- NEED TO REFACTOR FOR TEST IF RIGHT AND ITEMS NOT MORE THAN ONE -->
         <div :if={{ (@action_location != :right)}}>{{icon(:cross)}}</div>
       </div>
-      <div class="border-l border-gray-200 flex flex-col">
-        <div class="h-1/2 flex items-center justify-center text-center content-center border-b border-gray-200"><Button theme={{:secondary_varient}} class="w-full">Reply</Button></div>
-        <div class="h-1/2 flex items-center justify-center text-center content-center"><Button theme={{:tertiary}} class="w-full">Don't allow</Button></div>
+      <div :if={{@action_location == :right}} class="border-l border-gray-200 flex flex-col">
+        <div class="h-1/2 flex items-center justify-center text-center content-center border-b border-gray-200"><Button click={{@action}} theme={{:secondary_varient}} class="w-full h-full ring-inset" border_radius="rounded-none rounded-tr-lg">Reply</Button></div>
+        <div :if={{@secondary_action}} class="h-1/2 flex items-center justify-center text-center content-center"><Button theme={{:tertiary}} class="w-full h-full" border_radius="rounded-none rounded-br-lg ring-inset">Don't allow</Button></div>
       </div>
     </div>
     """

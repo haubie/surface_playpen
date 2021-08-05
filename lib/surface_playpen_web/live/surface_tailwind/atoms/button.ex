@@ -36,6 +36,7 @@ defmodule SurfaceTailwind.Button do
   prop margin, :css_class
   prop border, :css_class
   prop border_hover, :css_class
+  prop border_radius, :css_class
   prop text, :css_class
   prop text_size, :css_class
   prop background, :css_class

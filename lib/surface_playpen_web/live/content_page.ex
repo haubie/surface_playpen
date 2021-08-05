@@ -63,22 +63,29 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
+
+    <Notification title="Inline action" action_location={{:inline}}/>
+
     <Notification title="Icon added" icon={{:tick}} class="mt-12">
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="Bottom actions" icon={{:tick}} class="mt-12" action_location={{:bottom}}>
+    <Notification title="Bottom actions" icon={{:tick}} class="mt-12" action_location={{:bottom}}
+                  secondary_action={{"Event"}}>
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="Action right, single" icon={{:tick}} class="mt-12" action_location={{:right}}>
+    <Notification title="Action right, single"
+                  icon={{:tick}}
+                  class="mt-12"
+                  action_location={{:right}}>
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="No slot, title only, action to right" icon={{:tick}} class="mt-12" action_location={{:right}} class="absolute top-10 right-10" />
+    <Notification title="No slot, title only, action to right" icon={{:tick}} action_location={{:right}} class="mt-12 absolute top-10 right-10" />
 
     <Notification title="No slot, title only, no action" icon={{:tick}} class="mt-12" />
 

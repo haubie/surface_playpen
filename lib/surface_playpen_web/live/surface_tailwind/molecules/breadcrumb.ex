@@ -39,7 +39,7 @@ defmodule SurfaceTailwind.Breadcrumb do
         <li :for.with_index={{ {item, i} <- @crumbs }} class="flex justify-center items-center" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <div class={{"h-11 flex justify-center items-center mx-3", @separator_color}}>{{divider(@separator)}}</div>
             <a :if={{ Map.has_key?(item, :href) }} href={{ item.href }} class={{classes(assigns, :link),"hover:underline","font-medium"}} itemprop="item"><span itemprop="name">{{ item.name }}</span></a>
-            <span :if={{ not Map.has_key?(item, :href) }} itemprop="name" class={{classes(assigns, :link),"font-light"}}>{{ item.name }}</span>
+            <span :if={{ not Map.has_key?(item, :href) }} itemprop="name" class={{classes(assigns, :last_item),"font-light"}}>{{ item.name }}</span>
             <meta itemprop="position" content={{i+2}} />
         </li>
       </ol>
@@ -49,6 +49,7 @@ defmodule SurfaceTailwind.Breadcrumb do
 
   def classes(assigns, :top), do: T.build_class_list(assigns, &component_theme/1)
   def classes(assigns, :link), do: T.build_class_list(assigns, &link_theme/1)
+  def classes(assigns, :last_item), do: T.build_class_list(assigns, &last_item_theme/1)
   def classes(assigns, :bordered, true), do: T.build_class_list(assigns, &border_theme/1)
   def classes(_assigns, :bordered, false), do: nil
 
@@ -75,6 +76,14 @@ defmodule SurfaceTailwind.Breadcrumb do
       text: [
         T.value(theme, :light_text),
         T.value(theme, :light_text_hover)]
+    ]
+  end
+
+  def last_item_theme(theme) do
+    [
+      text: [
+        T.value(theme, :light_text)
+      ]
     ]
   end
 
