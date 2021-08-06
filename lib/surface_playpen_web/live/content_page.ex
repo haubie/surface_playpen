@@ -2,7 +2,8 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Accordion,AccordionItem,Icon}
+  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Accordion,AccordionItem,Icon,Tabs}
+  alias SurfaceTailwind.Tabs.TabItem
 
   @impl true
   def mount(_params, _session, socket) do
@@ -64,6 +65,27 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       <Icon icon="cross" colour="text-red-800" />
       <Icon icon="cross" w="w-12" h="h-12" />
     </div>
+
+
+
+    <div class="my-2 text-gray-400">
+      <Tabs id="my_tabs">
+        <TabItem label="Tab 1">Hello 1</TabItem>
+        <TabItem label="Tab 2 dsfds">Hello 2</TabItem>
+        <TabItem label="Tab 3">Hello 3</TabItem>
+      </Tabs>
+    </div>
+
+
+    <div class="my-2 text-gray-400">
+    <Tabs id="my_tabs_2" location="left">
+      <TabItem label="Tab 1" icon="tick">Hello 1</TabItem>
+      <TabItem label="Tab 2 sdfsdfsd" icon="plus">Hello 2</TabItem>
+      <TabItem label="Tab 3" icon="cross">Hello 3</TabItem>
+    </Tabs>
+  </div>
+
+
 
 
 
