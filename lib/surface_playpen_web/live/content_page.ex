@@ -2,7 +2,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Accordion,AccordionItem}
+  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Accordion,AccordionItem,Icon}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -57,6 +57,15 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </div>
 
 
+    <div class="my-2 text-gray-400">
+      <Icon icon="tick" />
+      <Icon icon="tick" theme={{:success}} />
+      <Icon icon="cross" />
+      <Icon icon="cross" colour="text-red-800" />
+      <Icon icon="cross" w="w-12" h="h-12" />
+    </div>
+
+
 
     <Notification title="No actions">
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
@@ -64,7 +73,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </Notification>
 
 
-    <Notification title="Inline action" action_location={{:inline}}/>
+    <Notification title="Inline action" action_location={{:inline}} class="mt-12"/>
 
     <Notification title="Icon added" icon={{:tick}} class="mt-12">
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
@@ -76,6 +85,24 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
+
+    <Notification title="Bottom actions, with theme" icon={{:tick}} class="mt-12" action_location={{:bottom}}
+        secondary_action={{"Event"}} theme={{:alert}}>
+    Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+    Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
+    <Notification title="Bottom actions, with theme" icon={{:tick}} class="mt-12" action_location={{:bottom}}
+        secondary_action={{"Event"}} theme={{:success}}>
+    Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+    Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+    </Notification>
+
+    <Notification title="Bottom actions, with theme" icon={{:tick}} class="mt-12" action_location={{:bottom}}
+    secondary_action={{"Event"}} theme={{:warning}}>
+Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
+Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
+</Notification>
 
     <Notification title="Action right, single"
                   icon={{:tick}}

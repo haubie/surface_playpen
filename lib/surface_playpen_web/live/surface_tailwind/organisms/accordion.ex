@@ -4,6 +4,7 @@ defmodule SurfaceTailwind.Accordion do
   """
   use Surface.LiveComponent
   alias SurfaceTailwind.Theme, as: T
+  alias SurfaceTailwind.Icon
 
   @doc "Css classes to propagate to the breadcrumbs's top level element <div>."
   prop theme, :atom, default: :primary
@@ -19,7 +20,6 @@ defmodule SurfaceTailwind.Accordion do
   prop text, :css_class
   prop alignment, :css_class, default: "inline-flex flex-row items-center"
 
-
   data active_item, :integer, default: nil
   data all_expanded, :boolean, default: false
 
@@ -34,16 +34,16 @@ defmodule SurfaceTailwind.Accordion do
     <div class={{"border-b border-200", @margin}}>
       <div class={{"flex flex-row justify-end items-center", classes(assigns, :header)}}>
         <h3 class="flex-1 text-2xl">Frequently asked questions</h3>
-        <a class="text-sm inline-flex row hover:underline" :on-click="expand_all" :if={{not @all_expanded}}>{{icon(:plus)}} Expand all</a>
-        <a class="text-sm inline-flex row hover:underline" :on-click="collapse_all" :if={{@all_expanded}}>{{icon(:minus)}} Collapse all</a>
+        <a class="text-sm inline-flex row hover:underline" :on-click="expand_all" :if={{not @all_expanded}}><Icon icon="plus" w="w-5" h="h-5"/> Expand all</a>
+        <a class="text-sm inline-flex row hover:underline" :on-click="collapse_all" :if={{@all_expanded}}><Icon icon="minus" w="w-5" h="h-5"/> Collapse all</a>
       </div>
 
-      <div :for.with_index={{ {accordion_item,i} <- @item }} class="border-t border-200 pb-5 hover:bg-gray-50">
-        <a class="flex flex-row pt-7 pb-2 hover:underline" :on-click="item_click" phx-value-index={{ i }}>
+      <div :for.with_index={{ {accordion_item,i} <- @item }} class="border-t border-200 pb-5">
+        <a class="flex flex-row pt-7 pb-2 group hover:underline" :on-click="item_click" phx-value-index={{ i }}>
           <div class={{"flex-1 font-semibold text-lg text-gray-800 pr-2", classes(assigns, :question)}}>{{accordion_item[:title]}}</div>
-          <div class="w-12 flex flex-row justify-end text-gray-400">
-            <span :if={{@all_expanded or @active_item == i}} :on-click="item_click" phx-value-index={{ i }}>{{icon(:up)}}</span>
-            <span :if={{not (@all_expanded or @active_item == i)}} :on-click="item_click" phx-value-index={{ i }}>{{icon(:down)}}</span>
+          <div class="w-12 flex flex-row justify-end opacity-40 group-hover:opacity-100">
+            <span :if={{@all_expanded or @active_item == i}} :on-click="item_click" phx-value-index={{ i }}><Icon icon="up" w="w-5" h="h-5" class="transition duration-300 ease-in-out transform group-hover:-translate-y-2"/></span>
+            <span :if={{not (@all_expanded or @active_item == i)}} :on-click="item_click" phx-value-index={{ i }}><Icon icon="down" w="w-5" h="h-5" class="transition duration-300 ease-in-out transform group-hover:translate-y-2"/></span>
           </div>
         </a>
         <div>
@@ -75,54 +75,22 @@ defmodule SurfaceTailwind.Accordion do
 
 
 
-  def classes(assigns, :header), do: T.build_class_list(assigns, &header_theme/1)
-  def classes(assigns, :question), do: T.build_class_list(assigns, &question_theme/1)
+  defp classes(assigns, :header), do: T.build_class_list(assigns, &header_theme/1)
+  defp classes(assigns, :question), do: T.build_class_list(assigns, &question_theme/1)
 
-  def header_theme(theme) do
-  [
-    padding: "pb-2",
-    text_color: T.value(theme, :text),
-    border: ["border-b-4", T.value(theme, :border_accent)]
-  ]
-  end
 
-  def question_theme(theme) do
+  defp header_theme(theme) do
     [
-      text_color: T.value(theme, :text_dark),
+      padding: "pb-2",
+      text: T.value(theme, :text),
+      border: ["border-b-4", T.value(theme, :border_accent)]
     ]
   end
 
-
-  defp icon(:up) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-    </svg>
-    """
-  end
-
-  defp icon(:down) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-    """
-  end
-
-  defp icon(:plus) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-    </svg>
-    """
-  end
-
-  defp icon(:minus) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
-    </svg>
-    """
+  defp question_theme(theme) do
+    [
+      text: T.value(theme, :text_dark)
+    ]
   end
 
 end

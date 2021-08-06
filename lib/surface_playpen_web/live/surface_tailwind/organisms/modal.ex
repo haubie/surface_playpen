@@ -9,11 +9,9 @@ defmodule SurfaceTailwind.Modal do
   * Actions (buttons)
 
   An icon can be optionally shown next to the title.
-
-
   """
   use Surface.Component
-  alias SurfaceTailwind.{Button, Backdrop}
+  alias SurfaceTailwind.{Button, Backdrop, Icon}
   alias SurfaceTailwind.Theme, as: T
 
   @doc "CSS classes to propagate to the breadcrumbs's top level element <div>."
@@ -54,7 +52,7 @@ defmodule SurfaceTailwind.Modal do
               <div class="sm:flex sm:items-start mr-0 sm:mr-3">
 
                 <div :if={{@icon}} class={{"mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10", classes_icon(@theme)}}>
-                  {{ @icon }}
+                  <Icon icon={{@icon}} w="w-6" h="h-6" />
                 </div>
 
                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
@@ -67,8 +65,18 @@ defmodule SurfaceTailwind.Modal do
                     <p>
                       {{@message}}
                     </p>
-                    <div class="w-full">
+                    <div class="w-full max-h-96 overflow-auto overscroll-contain">
                       <slot/>
+
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae justo augue. Fusce fermentum, nunc eu faucibus vehicula, risus mauris volutpat neque, eget elementum dolor ligula quis mi. Aliquam commodo dolor sed porta tempus. Integer rhoncus ultricies urna. Cras a consequat justo. Aenean ac ante odio. Nam vitae magna ultricies risus scelerisque vehicula sit amet quis turpis. Maecenas et ligula bibendum, congue quam vitae, tincidunt nunc. Phasellus tristique nisl porttitor erat maximus laoreet ut eget sem. Maecenas porta mollis pellentesque. Vestibulum posuere ullamcorper diam, ac pulvinar purus sodales vel. Ut non posuere orci. Suspendisse potenti. Pellentesque maximus libero magna, vel commodo risus vestibulum nec.
+
+Quisque gravida interdum nisl quis sagittis. Etiam orci lorem, aliquam id vestibulum facilisis, consequat et nibh. Sed nec porta justo, imperdiet efficitur tortor. Maecenas cursus porttitor posuere. Cras id nisl tempus, pharetra lectus vel, maximus turpis. Nunc tincidunt nisl vel ultrices facilisis. Curabitur non varius turpis. Morbi efficitur leo ut arcu porttitor, id luctus nunc lobortis. Quisque ut nunc malesuada, rhoncus ipsum id, volutpat mauris.
+
+Maecenas vitae interdum augue. Nulla aliquet orci vitae ante efficitur faucibus. Donec hendrerit mauris purus, luctus interdum nisi congue efficitur. Aliquam placerat, erat sed pellentesque convallis, turpis tortor auctor tortor, sit amet aliquam leo massa non elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras eget vehicula neque, ut varius mauris. Curabitur feugiat tincidunt est, varius suscipit lectus elementum eget.
+
+Sed tristique nibh quis neque varius consequat. Curabitur tincidunt et mi non convallis. Praesent porta tellus ornare quam vulputate, feugiat tincidunt magna venenatis. Mauris eu neque varius, egestas ipsum ullamcorper, molestie lacus. Pellentesque egestas leo eget dapibus elementum. Suspendisse et nunc ex. Mauris commodo erat eu erat congue, eget finibus lacus mattis. Nunc in sapien sit amet ex posuere interdum id id sem. Morbi sagittis tristique ultricies. Integer imperdiet vestibulum nunc, ut elementum lectus tristique non.
+
+Integer viverra posuere lorem, a tincidunt lacus consectetur id. Aenean porttitor pretium enim, a molestie ex maximus vel. Curabitur interdum ante ante, sit amet ultrices nisl rhoncus quis. Quisque ultrices malesuada scelerisque. Morbi a laoreet risus, vel tristique ipsum. Integer purus felis, efficitur eu pharetra cursus, commodo at augue. Etiam egestas, sem ut tristique interdum, ex arcu porttitor lectus, ut dignissim velit justo eu sem. Ut tincidunt malesuada mattis. Nullam interdum porta felis, ultrices accumsan sapien. Quisque at odio nulla. Mauris sit amet eros aliquam, feugiat lacus sit amet, tincidunt ipsum.
                     </div>
                   </div>
 
@@ -93,23 +101,12 @@ defmodule SurfaceTailwind.Modal do
 
 
   defp classes_icon(:alert), do: classes_icon(:error)
-  # defp classes_icon("warning"), do: theme_classes_for_icon(:warning)
-  # defp classes_icon(_default), do: theme_classes_for_icon(:primary)
   defp classes_icon(theme) do
     [
       T.value(theme, :text),
       T.value(theme, :background),
       "bg-opacity-20"
     ]
-  end
-
-
-  defp icon(:cross) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-    """
   end
 
 

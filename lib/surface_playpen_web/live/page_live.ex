@@ -2,15 +2,15 @@ defmodule SurfacePlaypenWeb.PageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Accordion,AccordionItem,Modal,Backdrop}
+  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Accordion,AccordionItem,Modal,Backdrop,Icon}
 
-  def icon(:new_page) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
-      <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
-    </svg>
-    """
-  end
+  # def icon(:new_page) do
+  #   ~E"""
+  #   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+  #     <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
+  #   </svg>
+  #   """
+  # end
 
   @impl true
   def mount(_params, _session, socket) do
@@ -32,25 +32,25 @@ defmodule SurfacePlaypenWeb.PageLive do
       <li>Form elements</li>
     </ul>
 
-    <h4 class="mt-4 font-semibold text-xl">Other:</h4>
+    <h4 class="mt-4 font-semibold text-xl">Further work:</h4>
 
     <ul>
-      <li>Accordion - done</li>
       <li>Alert - draft; need dismiss</li>
-      <li>Notification - draft; need dismiss</li>
-      <li>Breadcrumb - done</li>
-      <li>Grid - done</li>
+      <li>Notification - draft; need the dismiss. Also need to be able to mix in icons based on what user wants.</li>
 
     </ul>
 
-    <h4 class="mt-4 font-semibold text-xl">To do:</h4>
+    <h4 class="mt-4 font-semibold text-xl">Done:</h4>
 
     <ul>
-
-      <h4 class="mt-4 font-semibold text-xl">Other:</h4>
-
-
+      <li>Button - done</li>
+      <li>Accordion - done</li>
+      <li>Breadcrumb - done</li>
+      <li>Grid - done (basic!)</li>
+      <li>Icon - done (need to add more to the collection)!</li>
     </ul>
+
+
 
 
 
@@ -58,8 +58,8 @@ defmodule SurfacePlaypenWeb.PageLive do
       Modal
       <Modal title="New page"
              message="Select from the page types below."
-             icon={{ icon(:new_page) }}
-             show=true>
+             icon="new_page"
+             show=false>
 
           <ul class="mt-6 space-y-3 w-full">
             <li class="w-full">

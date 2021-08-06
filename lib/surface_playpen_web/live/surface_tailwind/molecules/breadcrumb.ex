@@ -4,6 +4,7 @@ defmodule SurfaceTailwind.Breadcrumb do
   """
   use Surface.Component
   alias SurfaceTailwind.Theme, as: T
+  alias SurfaceTailwind.Icon
 
   @doc "Css classes to propagate to the breadcrumbs's top level element <div>."
   prop theme, :atom, default: :neutral
@@ -33,7 +34,10 @@ defmodule SurfaceTailwind.Breadcrumb do
     <div>
       <ol class={{classes(assigns, :top), classes(assigns, :bordered, @bordered), @margin, "w-full": @full_width}} itemscope itemtype="https://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/" class={{classes(assigns, :link)}} itemprop="item">{{icon(:home)}}<span class="sr-only" itemprop="name">Home</span></a>
+          <a href="/" class={{classes(assigns, :link)}} itemprop="item">
+              <Icon icon="home" w="w-5" h="h-5" />
+              <span class="sr-only" itemprop="name">Home</span>
+          </a>
           <meta itemprop="position" content="1" />
         </li>
         <li :for.with_index={{ {item, i} <- @crumbs }} class="flex justify-center items-center" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -85,14 +89,6 @@ defmodule SurfaceTailwind.Breadcrumb do
         T.value(theme, :light_text)
       ]
     ]
-  end
-
-  defp icon(:home) do
-    ~E"""
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-    </svg>
-    """
   end
 
   defp divider("cheveron") do

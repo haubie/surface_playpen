@@ -116,6 +116,7 @@ defmodule SurfaceTailwind.Theme do
         ],
         error: [
             background: "bg-red-700",
+            background_hover: "hover:bg-red-800",
             text: "text-red-700",
             contrast_text: "text-white",
             border: "",
@@ -123,6 +124,7 @@ defmodule SurfaceTailwind.Theme do
         ],
         info: [
             background: "bg-blue-700",
+            background_hover: "hover:bg-blue-800",
             text: "text-blue-700",
             contrast_text: "text-white",
             border: "",
@@ -130,6 +132,7 @@ defmodule SurfaceTailwind.Theme do
         ],
         warning: [
             background: "bg-yellow-600",
+            background_hover: "hover:bg-yellow-700",
             text: "text-yellow-700",
             contrast_text: "text-white",
             border: "border-transparent",
