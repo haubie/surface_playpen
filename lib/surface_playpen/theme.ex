@@ -116,21 +116,21 @@ defmodule SurfaceTailwind.Theme do
         ],
         error: [
             background: "bg-red-700",
-            text: "bg-red-700",
+            text: "text-red-700",
             contrast_text: "text-white",
             border: "",
             ring: "ring-blue-500"
         ],
         info: [
             background: "bg-blue-700",
-            text: "bg-blue-700",
+            text: "text-blue-700",
             contrast_text: "text-white",
             border: "",
             ring: "ring-pink-500"
         ],
         warning: [
             background: "bg-yellow-600",
-            text: "bg-yellow-700",
+            text: "text-yellow-700",
             contrast_text: "text-white",
             border: "border-transparent",
             ring: "ring-pink-500",
@@ -138,7 +138,7 @@ defmodule SurfaceTailwind.Theme do
         success: [
             background: "bg-green-600",
             background_hover: "hover:bg-green-700",
-            text: "bg-green-700",
+            text: "text-green-700",
             contrast_text: "text-white",
             border: "border-transparent",
             ring: "ring-pink-500",

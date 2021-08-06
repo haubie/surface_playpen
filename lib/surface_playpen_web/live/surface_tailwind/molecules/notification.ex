@@ -47,7 +47,7 @@ defmodule SurfaceTailwind.Notification do
       action_location: is :right? <pre>{{@action_location == :right}}</pre>
       action_location: <pre>{{@action_location}}</pre>
     </div>
-    <div class={{["border border-gray-200 shadow-lg bg-white rounded-lg max-w-sm flex flex-row space-x-3", @class]}}>
+    <div class={{["border border-gray-200 shadow-lg bg-white rounded-lg max-w-sm flex flex-row space-x-3 overflow-hidden", @class]}}>
       <div :if={{@icon}} class={{ "flex-none flex flex-row justify-start text-green-500 py-4 pl-4", "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}}>
         {{icon(@icon)}}
       </div>
@@ -68,8 +68,8 @@ defmodule SurfaceTailwind.Notification do
         <div :if={{ (@action_location != :right)}}>{{icon(:cross)}}</div>
       </div>
       <div :if={{@action_location == :right}} class="border-l border-gray-200 flex flex-col">
-        <div class="h-1/2 flex items-center justify-center text-center content-center border-b border-gray-200"><Button click={{@action}} theme={{:secondary_varient}} class="w-full h-full ring-inset" border_radius="rounded-none rounded-tr-lg">Reply</Button></div>
-        <div :if={{@secondary_action}} class="h-1/2 flex items-center justify-center text-center content-center"><Button theme={{:tertiary}} class="w-full h-full" border_radius="rounded-none rounded-br-lg ring-inset">Don't allow</Button></div>
+        <div class={{"flex items-center justify-center text-center content-center", "border-b border-gray-200 h-1/2": (@secondary_action != nil), "h-full": (@secondary_action == nil)}}><Button click={{@action}} theme={{:secondary_varient}} class="w-full h-full ring-inset" border_radius={{"rounded-none rounded-tr-lg", "rounded-br-lg": (@secondary_action == nil)}}>Reply</Button></div>
+        <div :if={{@secondary_action}} class="h-1/2 flex items-center justify-center text-center content-center"><Button theme={{:tertiary}} class="w-full h-full ring-inset" border_radius="rounded-none rounded-br-lg">Don't allow</Button></div>
       </div>
     </div>
     """

@@ -1,6 +1,6 @@
 defmodule SurfaceTailwind.Accordion do
   @moduledoc """
-  A basic **breadcrumb**.
+  An **accordion**.
   """
   use Surface.LiveComponent
   alias SurfaceTailwind.Theme, as: T
@@ -8,7 +8,6 @@ defmodule SurfaceTailwind.Accordion do
   @doc "Css classes to propagate to the breadcrumbs's top level element <div>."
   prop theme, :atom, default: :primary
   prop class, :css_class
-  prop background, :css_class
   prop separator_color, :css_class, default: "text-gray-200"
   prop full_width, :boolean, default: false
   prop padding, :css_class
@@ -79,11 +78,6 @@ defmodule SurfaceTailwind.Accordion do
   def classes(assigns, :header), do: T.build_class_list(assigns, &header_theme/1)
   def classes(assigns, :question), do: T.build_class_list(assigns, &question_theme/1)
 
-  # def classes(assigns, :top), do: T.build_class_list(assigns, &component_theme/1)
-  # def classes(assigns, :link), do: T.build_class_list(assigns, &link_theme/1)
-  # def classes(assigns, :bordered, true), do: T.build_class_list(assigns, &border_theme/1)
-  # def classes(_assigns, :bordered, false), do: nil
-
   def header_theme(theme) do
   [
     padding: "pb-2",
@@ -98,31 +92,6 @@ defmodule SurfaceTailwind.Accordion do
     ]
   end
 
-
-  # def component_theme(_theme) do
-  #   [
-  #     alignment: "inline-flex flex-row items-center",
-  #     text_size: "text-sm"
-  #   ]
-  # end
-
-  # def border_theme(theme) do
-  #   [
-  #     background: "white",
-  #     shadow: "shadow",
-  #     padding: ["pl-7", "pr-8"],
-  #     border: T.value(theme, :border_light),
-  #     border_radius: T.value(:general, :border_radius),
-  #   ]
-  # end
-
-  # def link_theme(theme) do
-  #   [
-  #     text: [
-  #       T.value(theme, :light_text),
-  #       T.value(theme, :light_text_hover)]
-  #   ]
-  # end
 
   defp icon(:up) do
     ~E"""

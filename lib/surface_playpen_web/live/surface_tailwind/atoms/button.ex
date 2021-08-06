@@ -26,9 +26,17 @@ defmodule SurfaceTailwind.Button do
   @doc "Triggered on click"
   prop click, :event
 
-  @doc "Css classes to propagate down to button. Default class if no class supplied is simply _button_"
+  @doc "Additional CSS classes to append to the button element."
   prop class, :css_class
 
+  @doc """
+  Used to set which styles are used from the global theme definition. The default is :primary.
+  Depending on your global theme setup, you may also have the additional styles:
+    :secondary, :secondary_varient, :neutral, :tertiary
+    :info, :warning, :error, :success
+
+  The :disabled global theme is applied if the button has the property disabled=true
+  """
   prop theme, :atom, default: :primary
 
   prop alignment, :css_class
@@ -58,7 +66,7 @@ defmodule SurfaceTailwind.Button do
       :on-click={{@click}}
       disabled={{@disabled}}
       value={{@value}}
-      class={{classes(assigns)}}>
+      class={{classes(assigns), @class}}>
       <slot>{{ @label }}</slot>
     </button>
     """

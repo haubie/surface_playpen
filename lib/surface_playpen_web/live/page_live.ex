@@ -2,7 +2,15 @@ defmodule SurfacePlaypenWeb.PageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Accordion,AccordionItem}
+  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Accordion,AccordionItem,Modal,Backdrop}
+
+  def icon(:new_page) do
+    ~E"""
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+      <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
+    </svg>
+    """
+  end
 
   @impl true
   def mount(_params, _session, socket) do
@@ -12,6 +20,94 @@ defmodule SurfacePlaypenWeb.PageLive do
   @impl true
   def render(assigns) do
     ~H"""
+    <div class="m-12">
+
+    <h4 class="mt-4 font-semibold text-xl">Surface required:</h4>
+    <ul>
+      <li>Button - done</li>
+      <li>Table</li>
+      <li>Tabs</li>
+      <li>Menu</li>
+      <li>Modal - draft</li>
+      <li>Form elements</li>
+    </ul>
+
+    <h4 class="mt-4 font-semibold text-xl">Other:</h4>
+
+    <ul>
+      <li>Accordion - done</li>
+      <li>Alert - draft; need dismiss</li>
+      <li>Notification - draft; need dismiss</li>
+      <li>Breadcrumb - done</li>
+      <li>Grid - done</li>
+
+    </ul>
+
+    <h4 class="mt-4 font-semibold text-xl">To do:</h4>
+
+    <ul>
+
+      <h4 class="mt-4 font-semibold text-xl">Other:</h4>
+
+
+    </ul>
+
+
+
+
+      Modal
+      <Modal title="New page"
+             message="Select from the page types below."
+             icon={{ icon(:new_page) }}
+             show=true>
+
+          <ul class="mt-6 space-y-3 w-full">
+            <li class="w-full">
+
+              <a class="border rounded hover:bg-gray-50 hover:shadow-md hover:border-purple-900 hover:text-purple-900 p-3 inline-block w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <div class="font-bold">Standard page</div>
+                  <div class="font-light text-xs">Used for most content pages.</div>
+              </a>
+            </li>
+            <li class="w-full">
+
+            <a class="border rounded hover:bg-gray-50 hover:shadow-md hover:border-purple-900 hover:text-purple-900 p-3 inline-block w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div class="font-bold">Product page</div>
+                  <div class="font-light text-xs">Used for products for sale.</div>
+                  </a>
+
+            </li>
+
+            <li class="w-full">
+
+            <a class="border rounded hover:bg-gray-50 hover:shadow-md hover:border-purple-900 hover:text-purple-900 p-3 inline-block w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div class="font-bold">Recipe page</div>
+                  <div class="font-light text-xs">Used for recipes.</div>
+                  </a>
+
+            </li>
+
+            <li class="w-full">
+
+            <a class="border rounded hover:bg-gray-50 hover:shadow-md hover:border-purple-900 hover:text-purple-900 p-3 inline-block w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div class="font-bold">Quiz page</div>
+                  <div class="font-light text-xs">Used for quizzes.</div>
+                  </a>
+
+            </li>
+
+          </ul>
+
+      </Modal>
+
+      <!-- <Backdrop>
+        <div class="bg-white text-pink-900">Hello</div>
+      </Backdrop> -->
+    </div>
+
+
+
+
 
     Accordion
     <Accordion id="faq_accordion">
