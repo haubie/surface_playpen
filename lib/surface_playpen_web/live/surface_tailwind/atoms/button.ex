@@ -85,7 +85,8 @@ defmodule SurfaceTailwind.Button do
       text_size: "text-sm",
       background: T.value(theme, :background),
       background_hover: T.value(theme, :background_hover),
-      ring: T.value(theme, :ring)
+      ring: T.value(theme, :ring),
+      animation: "transition duration-200 ease-in-out"
     ]
   end
 

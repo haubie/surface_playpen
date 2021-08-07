@@ -2,7 +2,11 @@ defmodule SurfacePlaypenWeb.PageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Accordion,AccordionItem,Modal,Backdrop,Icon}
+  alias SurfaceTailwind.{Button,Alert,Grid,Breadcrumb,Modal,Backdrop,Icon}
+  alias SurfaceTailwind.Tabs
+  alias SurfaceTailwind.Tabs.TabItem
+  alias SurfaceTailwind.Accordion
+  alias SurfaceTailwind.Accordion.AccordionItem
 
   @impl true
   def mount(_params, _session, socket) do
@@ -18,7 +22,7 @@ defmodule SurfacePlaypenWeb.PageLive do
     <ul>
       <li>Button - done</li>
       <li>Table</li>
-      <li>Tabs</li>
+      <li>Tabs - draft</li>
       <li>Menu</li>
       <li>Modal - draft</li>
       <li>Form elements</li>

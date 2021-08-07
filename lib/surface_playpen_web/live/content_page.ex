@@ -2,8 +2,11 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
   # use SurfacePlaypenWeb, :live_view
   use Surface.LiveView
 
-  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Accordion,AccordionItem,Icon,Tabs}
+  alias SurfaceTailwind.{But,Button,Alert,Grid,Breadcrumb,Notification,Icon}
+  alias SurfaceTailwind.Tabs
   alias SurfaceTailwind.Tabs.TabItem
+  alias SurfaceTailwind.Accordion
+  alias SurfaceTailwind.Accordion.AccordionItem
 
   @impl true
   def mount(_params, _session, socket) do
@@ -70,8 +73,34 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
     <div class="my-2 text-gray-400">
       <Tabs id="my_tabs">
-        <TabItem label="Tab 1">Hello 1</TabItem>
-        <TabItem label="Tab 2 dsfds">Hello 2</TabItem>
+        <TabItem label="Tab 1" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1a23423 4234 234 23" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1b" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1c" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1d" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1e" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1f" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1g" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1h" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1i" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1j" icon="cross">Hello 1</TabItem>
+        <TabItem label="Tab 1k" icon="cross">Hello 1</TabItem>
+
+        <TabItem label="Tab 2 dsfds" icon="plus">
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
+
+Donec fringilla finibus libero sed viverra. Suspendisse potenti. Vestibulum viverra, velit at imperdiet ullamcorper, justo tellus eleifend massa, eu vulputate urna nulla et leo. Nulla sed eros sit amet velit rutrum feugiat. Etiam ut sapien venenatis, ullamcorper turpis ut, tristique nibh. Curabitur a varius enim, id dignissim purus. Sed vulputate, tellus in finibus volutpat, risus lacus rhoncus augue, ac imperdiet justo nibh eget magna. Proin quis elit in sem consequat interdum ut et magna. Nullam dignissim at tellus ac ultrices. Sed sagittis in diam a mattis. Nullam venenatis elit eu feugiat ornare. Nunc in egestas eros.
+
+Etiam quis rutrum mi. Nam molestie nibh augue. Sed convallis libero eget felis placerat sollicitudin. Vestibulum sit amet auctor elit. Proin augue orci, molestie at massa quis, pellentesque suscipit lectus. Maecenas eleifend mi a ipsum viverra suscipit. Sed dictum rhoncus auctor. Ut risus eros, elementum eget nisi a, pulvinar sollicitudin dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In dictum faucibus ante non vestibulum. Integer eu vestibulum odio, a convallis turpis. Curabitur rutrum purus eget scelerisque iaculis.
+
+Nam sit amet arcu sollicitudin, blandit felis posuere, tincidunt magna. In hac habitasse platea dictumst. Donec tincidunt, sapien eu fermentum laoreet, nisl velit commodo dolor, ut tempus orci velit eget ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent gravida enim vel tincidunt volutpat. In hac habitasse platea dictumst. Quisque ornare eget arcu vitae pellentesque.
+
+Proin a tortor sed urna accumsan malesuada. Sed eget lectus elementum, aliquam ipsum vitae, venenatis neque. Donec aliquet est ut turpis malesuada fringilla. Pellentesque ultricies auctor laoreet. Nullam in lectus ac risus ullamcorper lobortis eu eu purus. Duis eu odio accumsan, bibendum massa ac, mattis dolor. In hac habitasse platea dictumst. Morbi sollicitudin vel lectus ut sagittis. Maecenas posuere tincidunt aliquam. Morbi feugiat ex vehicula dapibus commodo. Morbi eleifend vehicula nisl. Proin varius commodo ligula, ut pellentesque odio egestas vitae. Etiam tempus tempus nulla, non molestie dolor vehicula nec.
+
+
+        </TabItem>
+        <TabItem label="Tab dis" disabled=true>Disabled tab</TabItem>
         <TabItem label="Tab 3">Hello 3</TabItem>
       </Tabs>
     </div>
@@ -80,7 +109,22 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     <div class="my-2 text-gray-400">
     <Tabs id="my_tabs_2" location="left">
       <TabItem label="Tab 1" icon="tick">Hello 1</TabItem>
-      <TabItem label="Tab 2 sdfsdfsd" icon="plus">Hello 2</TabItem>
+      <TabItem label="Tab 2 sdfsdfsd" icon="plus">
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
+
+Donec fringilla finibus libero sed viverra. Suspendisse potenti. Vestibulum viverra, velit at imperdiet ullamcorper, justo tellus eleifend massa, eu vulputate urna nulla et leo. Nulla sed eros sit amet velit rutrum feugiat. Etiam ut sapien venenatis, ullamcorper turpis ut, tristique nibh. Curabitur a varius enim, id dignissim purus. Sed vulputate, tellus in finibus volutpat, risus lacus rhoncus augue, ac imperdiet justo nibh eget magna. Proin quis elit in sem consequat interdum ut et magna. Nullam dignissim at tellus ac ultrices. Sed sagittis in diam a mattis. Nullam venenatis elit eu feugiat ornare. Nunc in egestas eros.
+
+Etiam quis rutrum mi. Nam molestie nibh augue. Sed convallis libero eget felis placerat sollicitudin. Vestibulum sit amet auctor elit. Proin augue orci, molestie at massa quis, pellentesque suscipit lectus. Maecenas eleifend mi a ipsum viverra suscipit. Sed dictum rhoncus auctor. Ut risus eros, elementum eget nisi a, pulvinar sollicitudin dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In dictum faucibus ante non vestibulum. Integer eu vestibulum odio, a convallis turpis. Curabitur rutrum purus eget scelerisque iaculis.
+
+Nam sit amet arcu sollicitudin, blandit felis posuere, tincidunt magna. In hac habitasse platea dictumst. Donec tincidunt, sapien eu fermentum laoreet, nisl velit commodo dolor, ut tempus orci velit eget ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent gravida enim vel tincidunt volutpat. In hac habitasse platea dictumst. Quisque ornare eget arcu vitae pellentesque.
+
+Proin a tortor sed urna accumsan malesuada. Sed eget lectus elementum, aliquam ipsum vitae, venenatis neque. Donec aliquet est ut turpis malesuada fringilla. Pellentesque ultricies auctor laoreet. Nullam in lectus ac risus ullamcorper lobortis eu eu purus. Duis eu odio accumsan, bibendum massa ac, mattis dolor. In hac habitasse platea dictumst. Morbi sollicitudin vel lectus ut sagittis. Maecenas posuere tincidunt aliquam. Morbi feugiat ex vehicula dapibus commodo. Morbi eleifend vehicula nisl. Proin varius commodo ligula, ut pellentesque odio egestas vitae. Etiam tempus tempus nulla, non molestie dolor vehicula nec.
+
+
+
+      </TabItem>
+      <TabItem label="Tab dis" disabled=true>Disabled tab</TabItem>
       <TabItem label="Tab 3" icon="cross">Hello 3</TabItem>
     </Tabs>
   </div>
