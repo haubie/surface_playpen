@@ -19,6 +19,9 @@ defmodule SurfaceTailwind.Tabs do
   prop label_width, :css_class, default: "w-28 sm:w-32 md:w-44"
 
   prop flex, :css_class, default: "flex-shrink", values: ["flex-shrink", "flex-grow"]
+  prop tab_text, :css_class, default: "text-sm"
+  prop tab_font, :css_class, default: "font-medium"
+
 
   prop theme, :atom, default: :primary
 
@@ -93,7 +96,9 @@ defmodule SurfaceTailwind.Tabs do
     <li
     :for.with_index={{ {tab,index} <- @tabs }}
     class={{
-      "group transition duration-300 ease-in-out text-sm font-medium block flex flex-row border-transparent",
+      "group transition duration-300 ease-in-out block flex flex-row border-transparent",
+      @tab_text,
+      @tab_font,
       "border-b-2 h-12 #{@flex}": (@location == "top"),
       "border-r-2 #{@label_width} flex-grow": (@location == "left"),
       "#{T.value(@theme, :border_accent)} #{T.value(@theme, :text)}": @active_tab == index,

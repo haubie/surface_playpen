@@ -7,6 +7,10 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
   alias SurfaceTailwind.Tabs.TabItem
   alias SurfaceTailwind.Accordion
   alias SurfaceTailwind.Accordion.AccordionItem
+  alias SurfaceTailwind.Menu
+  alias SurfaceTailwind.Menu.MenuItem
+  # alias SurfaceTailwind.Menu.MenuGroup
+
 
   @impl true
   def mount(_params, _session, socket) do
@@ -61,6 +65,26 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </div>
 
 
+    <div class="my-2">
+
+   <!-- <MenuGroup title="Group">
+      <MenuItem title="Group menu item 1" label="12" icon="cross" />
+      <MenuItem title="Group menu item 1" label="12" icon="cross" />
+    </MenuGroup> -->
+
+      <Menu>
+        <MenuItem title="Stuff" label="12" icon="cross" />
+      </Menu>
+
+     <!-- <MenuItem title="A very very very very long menu" icon="tick" />
+      <MenuItem title="Stuff" label="2" icon="minus" />
+      <MenuItem title="A very very very very long menu" icon="tick" label="3" />
+      <MenuItem title="Stuff" /> -->
+
+
+    </div>
+
+
     <div class="my-2 text-gray-400">
       <Icon icon="tick" />
       <Icon icon="tick" theme={{:success}} />
@@ -70,6 +94,19 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </div>
 
     <div class="flex flex-col space-y-6">
+
+    Larger text
+    <Tabs id="surface_gallery3232" tab_text="text-xl" tab_font="font-thin">
+        <TabItem label="Properties very long menu" icon="tick">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
+        </TabItem>
+        <TabItem label="Slots">Hello 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum. </TabItem>
+        <TabItem label="Events">Hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.1</TabItem>
+        <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
+    </Tabs>
+
+
+
     <Tabs id="surface_gallery">
         <TabItem label="Properties very long menu" icon="tick">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
