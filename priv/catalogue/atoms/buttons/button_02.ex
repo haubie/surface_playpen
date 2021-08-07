@@ -7,7 +7,7 @@ defmodule SurfaceTailwind.Catalogue.Button.Example02 do
     container: {:div, class: "flex flex-col space-y-4"}
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <Button>Default theme (primary by default)</Button>
     <Button theme={{:primary}}>Primary theme</Button>
     <Button theme={{:secondary}}>Secondary theme</Button>

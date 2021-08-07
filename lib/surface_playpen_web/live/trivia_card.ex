@@ -16,11 +16,11 @@ defmodule SurfacePlaypenWeb.TriviaCard do
   end
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <div>
       <div class="card mb-8">
         <h3>
-        {{ @trivia_value }}
+        {@trivia_value}
         </h3>
       </div>
 
@@ -31,7 +31,7 @@ defmodule SurfacePlaypenWeb.TriviaCard do
 
       <Button background="bg-green-600 hover:bg-green-900">Backround overridden</Button>
 
-      <Button theme="secondary">Secondary pallete</Button>
+      <Button theme={:secondary}>Secondary pallete</Button>
 
       </div>
 
@@ -39,7 +39,7 @@ defmodule SurfacePlaypenWeb.TriviaCard do
 
 
       <Button click="answer">Answer</Button>
-      <Button :if={{ @answered }} click="new">Another 1</Button>
+      <Button :if={@answered} click="new">Another 1</Button>
 
 
 

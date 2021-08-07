@@ -45,9 +45,9 @@ defmodule SurfaceTailwind.Icon do
   prop theme, :atom
 
   def render(assigns) do
-    ~H"""
-    <div class={{@display, @w, @h, colour_class(@theme, @colour), @class}}>
-      {{icon(@icon)}}
+    ~F"""
+    <div class={@display, @w, @h, colour_class(@theme, @colour), @class}>
+      {icon(@icon)}
     </div>
     """
   end

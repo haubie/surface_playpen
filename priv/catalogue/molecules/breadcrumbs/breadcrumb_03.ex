@@ -7,14 +7,14 @@ defmodule SurfaceTailwind.Catalogue.Alert.Breadcrumb03 do
     container: {:div, class: "flex flex-col space-y-4 bg-gray-50 py-4 px-2"}
 
   def render(assigns) do
-    ~H"""
-    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}}
-                bordered=true background="bg-white" />
+    ~F"""
+    <Breadcrumb crumbs={[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}
+                bordered={true} background="bg-white" />
 
-    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}}
+    <Breadcrumb crumbs={[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}
     separator="divider"
     background="bg-white"
-    bordered=true />
+    bordered={true} />
     """
   end
 end

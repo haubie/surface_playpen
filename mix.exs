@@ -52,8 +52,8 @@ defmodule SurfacePlaypen.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:surface, "~> 0.4.0"},
-      {:surface_catalogue, "~> 0.0.8", only: [:dev, :test]}
+      {:surface, "~> 0.5.0"},
+      {:surface_catalogue, "~> 0.1.0", only: [:dev, :test]}
     ]
   end
 

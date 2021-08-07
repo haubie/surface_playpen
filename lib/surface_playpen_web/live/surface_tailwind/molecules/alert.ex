@@ -49,23 +49,23 @@ defmodule SurfaceTailwind.Alert do
   slot default
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <div
-      aria-label={{@aria_label}}
-      :on-click={{@click}}
-      value={{@value}}
-      class={{classes(assigns),"space-x-3"}}>
+      aria-label={@aria_label}
+      :on-click={@click}
+      value={@value}
+      class={classes(assigns),"space-x-3"}>
         <div class="w-12 h-12
                     rounded-full
                     bg-white bg-opacity-20
                     flex flex-col
                     justify-center items-center">
-                    {{icon(@type)}}
+                    {icon(@type)}
         </div>
         <div class="flex-1">
-          <slot>{{ @label }}</slot>
+          <#slot>{@label}</#slot>
         </div>
-        <div class="w-8 opacity-60">{{icon(:cross)}}</div>
+        <div class="w-8 opacity-60">{icon(:cross)}</div>
     </div>
     """
   end

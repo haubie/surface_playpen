@@ -7,7 +7,7 @@ defmodule SurfaceTailwind.Catalogue.Alert.Example03 do
     container: {:div, class: "flex flex-col space-y-4"}
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <Alert border="border-8 border-blue-900 border-opacity-40"
            background="bg-gradient-to-r from-red-100 to-indigo-100"
            text="text-blue-900 font-semibold">

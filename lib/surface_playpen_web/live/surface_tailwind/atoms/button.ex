@@ -59,15 +59,15 @@ defmodule SurfaceTailwind.Button do
   slot default
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <button
-      type={{@type}}
-      aria-label={{@aria_label}}
-      :on-click={{@click}}
-      disabled={{@disabled}}
-      value={{@value}}
-      class={{classes(assigns), @class}}>
-      <slot>{{ @label }}</slot>
+      type={@type}
+      aria-label={@aria_label}
+      :on-click={@click}
+      disabled={@disabled}
+      value={@value}
+      class={classes(assigns), @class}>
+      <#slot>{@label}</#slot>
     </button>
     """
   end

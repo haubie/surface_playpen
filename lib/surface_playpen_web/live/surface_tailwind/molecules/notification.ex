@@ -55,30 +55,30 @@ defmodule SurfaceTailwind.Notification do
   slot default
 
   def render(assigns) do
-    ~H"""
-    <div class={{["border border-gray-200 shadow-lg bg-white rounded-lg max-w-sm flex flex-row space-x-3 overflow-hidden", @class]}}>
-      <div :if={{@icon}} class={{ "flex-none flex flex-row justify-start py-4 pl-4", icon_color(@theme), "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}}>
-        <Icon icon="{{@icon}}" w="w-6" h="h-6"/>
+    ~F"""
+    <div class={["border border-gray-200 shadow-lg bg-white rounded-lg max-w-sm flex flex-row space-x-3 overflow-hidden", @class]}>
+      <div :if={@icon} class={"flex-none flex flex-row justify-start py-4 pl-4", icon_color(@theme), "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}>
+        <Icon icon={"#{@icon}"} w="w-6" h="h-6"/>
       </div>
-      <div class={{"flex-1 flex flex-col space-y-2 py-4", "pl-6": (@icon == nil), "justify-start": (assigns[:default] != nil), "justify-center": (assigns[:default] == nil)}}>
-        <h2 :if={{@title}} class="text-gray-900 font-bold text-sm">{{@title}}</h2>
-        <p :if={{assigns[:default]}} class="text-gray-500 font-light text-sm"><slot/></p>
+      <div class={"flex-1 flex flex-col space-y-2 py-4", "pl-6": (@icon == nil), "justify-start": (assigns[:default] != nil), "justify-center": (assigns[:default] == nil)}>
+        <h2 :if={@title} class="text-gray-900 font-bold text-sm">{@title}</h2>
+        <p :if={assigns[:default]} class="text-gray-500 font-light text-sm"><#slot/></p>
 
-        <div :if={{@action_location == :bottom}} class="flex flex-row space-x-4 pt-1">
-          <Button theme={{classes_for_primary_button(@theme)}} click={{@action}} >Accept</Button>
-          <Button :if={{@secondary_action}} theme={{:neutral}} click={{@secondary_action}} >Decline</Button>
+        <div :if={@action_location == :bottom} class="flex flex-row space-x-4 pt-1">
+          <Button theme={classes_for_primary_button(@theme)} click={@action} >Accept</Button>
+          <Button :if={@secondary_action} theme={:neutral} click={@secondary_action} >Decline</Button>
         </div>
       </div>
-      <div class={{"flex-none flex flex-row justify-end text-gray-400 py-4 pr-4", "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}}>
-        <div :if={{@action_location == :inline}}>
-          <Button theme={{:secondary_varient}} click={{@action}} class="mr-2">Undo</Button>
+      <div class={"flex-none flex flex-row justify-end text-gray-400 py-4 pr-4", "items-start": (assigns[:default] != nil), "items-center": (assigns[:default] == nil)}>
+        <div :if={@action_location == :inline}>
+          <Button theme={:secondary_varient} click={@action} class="mr-2">Undo</Button>
         </div>
         <!-- NEED TO REFACTOR FOR TEST IF RIGHT AND ITEMS NOT MORE THAN ONE -->
-        <Icon :if={{ (@action_location != :right)}} icon="cross" w="w-6" h="h-6"/>
+        <Icon :if={(@action_location != :right)} icon="cross" w="w-6" h="h-6"/>
       </div>
-      <div :if={{@action_location == :right}} class="border-l border-gray-200 flex flex-col">
-        <div class={{"flex items-center justify-center text-center content-center", "border-b border-gray-200 h-1/2": (@secondary_action != nil), "h-full": (@secondary_action == nil)}}><Button click={{@action}} theme={{:secondary_varient}} class="w-full h-full ring-inset" border_radius={{"rounded-none rounded-tr-lg", "rounded-br-lg": (@secondary_action == nil)}}>Reply</Button></div>
-        <div :if={{@secondary_action}} class="h-1/2 flex items-center justify-center text-center content-center"><Button theme={{:tertiary}} class="w-full h-full ring-inset" border_radius="rounded-none rounded-br-lg">Don't allow</Button></div>
+      <div :if={@action_location == :right} class="border-l border-gray-200 flex flex-col">
+        <div class={"flex items-center justify-center text-center content-center", "border-b border-gray-200 h-1/2": (@secondary_action != nil), "h-full": (@secondary_action == nil)}><Button click={@action} theme={:secondary_varient} class="w-full h-full ring-inset" border_radius={"rounded-none rounded-tr-lg", "rounded-br-lg": (@secondary_action == nil)}>Reply</Button></div>
+        <div :if={@secondary_action} class="h-1/2 flex items-center justify-center text-center content-center"><Button theme={:tertiary} class="w-full h-full ring-inset" border_radius="rounded-none rounded-br-lg">Don't allow</Button></div>
       </div>
     </div>
     """

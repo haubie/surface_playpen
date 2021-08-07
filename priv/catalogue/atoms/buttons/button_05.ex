@@ -6,14 +6,14 @@ defmodule SurfaceTailwind.Catalogue.Button.Example05 do
     height: "400px"
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <Button background="bg-green-200 hover:bg-green-900"
             text="text-green-900 hover:text-white"
             class="my-4">
             Overiding styles in props
     </Button>
 
-    <Button theme={{:secondary}}
+    <Button theme={:secondary}
             background="bg-red-200 hover:bg-red-900"
             text="text-red-900 hover:text-white"
             class="my-4">

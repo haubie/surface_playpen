@@ -30,27 +30,27 @@ defmodule SurfaceTailwind.Accordion do
 
 
   def render(assigns) do
-    ~H"""
-    <div class={{"border-b border-200", @margin}}>
-      <div class={{"flex flex-row justify-end items-center", classes(assigns, :header)}}>
+    ~F"""
+    <div class={"border-b border-200", @margin}>
+      <div class={"flex flex-row justify-end items-center", classes(assigns, :header)}>
         <h3 class="flex-1 text-2xl">Frequently asked questions</h3>
-        <a class="text-sm inline-flex row hover:underline" :on-click="expand_all" :if={{not @all_expanded}}><Icon icon="plus" w="w-5" h="h-5"/> Expand all</a>
-        <a class="text-sm inline-flex row hover:underline" :on-click="collapse_all" :if={{@all_expanded}}><Icon icon="minus" w="w-5" h="h-5"/> Collapse all</a>
+        <a class="text-sm inline-flex row hover:underline" :on-click="expand_all" :if={not @all_expanded}><Icon icon="plus" w="w-5" h="h-5"/> Expand all</a>
+        <a class="text-sm inline-flex row hover:underline" :on-click="collapse_all" :if={@all_expanded}><Icon icon="minus" w="w-5" h="h-5"/> Collapse all</a>
       </div>
 
-      <div :for.with_index={{ {accordion_item,i} <- @item }} class="border-t border-200 pb-5 flex flex-col">
-        <a class="flex flex-row pt-7 pb-2 group hover:underline" :on-click="item_click" phx-value-index={{ i }}>
+      <div :for.with_index={{accordion_item,i} <- @item} class="border-t border-200 pb-5 flex flex-col">
+        <a class="flex flex-row pt-7 pb-2 group hover:underline" :on-click="item_click" phx-value-index={i}>
 
-          <div class={{"flex-1 font-semibold text-lg text-gray-800 pr-2", classes(assigns, :question)}}>{{accordion_item[:title]}}</div>
+          <div class={"flex-1 font-semibold text-lg text-gray-800 pr-2", classes(assigns, :question)}>{accordion_item[:title]}</div>
 
           <div class="w-12 flex flex-row justify-end opacity-40 group-hover:opacity-100">
-            <span :if={{@all_expanded or @active_item == i}} :on-click="item_click" phx-value-index={{ i }}><Icon icon="up" w="w-5" h="h-5" class="transition duration-300 ease-in-out transform group-hover:-translate-y-2"/></span>
-            <span :if={{not (@all_expanded or @active_item == i)}} :on-click="item_click" phx-value-index={{ i }}><Icon icon="down" w="w-5" h="h-5" class="transition duration-300 ease-in-out transform group-hover:translate-y-2"/></span>
+            <span :if={@all_expanded or @active_item == i} :on-click="item_click" phx-value-index={i}><Icon icon="up" w="w-5" h="h-5" class="transition duration-300 ease-in-out transform group-hover:-translate-y-2"/></span>
+            <span :if={not (@all_expanded or @active_item == i)} :on-click="item_click" phx-value-index={i}><Icon icon="down" w="w-5" h="h-5" class="transition duration-300 ease-in-out transform group-hover:translate-y-2"/></span>
           </div>
         </a>
 
-        <div class={{"text-gray-500 pr-16"}} :show={{@all_expanded or (@active_item == i)}}>
-          <slot name="item" index={{i}} />
+        <div class={"text-gray-500 pr-16"} :show={@all_expanded or (@active_item == i)}>
+          <#slot name="item" index={i} />
         </div>
       </div>
 

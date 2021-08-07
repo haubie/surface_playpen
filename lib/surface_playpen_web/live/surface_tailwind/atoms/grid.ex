@@ -20,9 +20,9 @@ defmodule SurfaceTailwind.Grid do
   slot default
 
   def render(assigns) do
-    ~H"""
-    <div class={{"grid", @cols, @gap, @margin, @width, @class}}>
-      <slot/>
+    ~F"""
+    <div class={"grid", @cols, @gap, @margin, @width, @class}>
+      <#slot/>
     </div>
     """
   end

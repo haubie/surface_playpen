@@ -19,7 +19,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
   @impl true
   def render(assigns) do
-    ~H"""
+    ~F"""
     <div class="mx-12 px-12 bg-gray-50">
 
     <Alert class="my-3">Remember to sign up!</Alert>
@@ -31,12 +31,12 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       </div>
       <div class="flex-1 text-sm">
         <ul class="flex flex-row items-center space-x-4">
-          <li><Button theme={{:menu}} text_size="text-sm" background="bg-gray-900">Menu 1</Button></li>
-          <li><Button theme={{:menu}} text_size="text-sm">Menu 2</Button></li>
-          <li><Button theme={{:menu}} text_size="text-sm">Menu 3</Button></li>
+          <li><Button theme={:menu} text_size="text-sm" background="bg-gray-900">Menu 1</Button></li>
+          <li><Button theme={:menu} text_size="text-sm">Menu 2</Button></li>
+          <li><Button theme={:menu} text_size="text-sm">Menu 3</Button></li>
         </ul>
       </div>
-      <div><input type="search" class="text-white text-xs h-8 mr-4 bg-gray-600 border border-gray-400 px-2" placeholder="Search" /> <Button theme={{:menu}} text_size="text-sm" background="bg-blue-500">Login</Button></div>
+      <div><input type="search" class="text-white text-xs h-8 mr-4 bg-gray-600 border border-gray-400 px-2" placeholder="Search" /> <Button theme={:menu} text_size="text-sm" background="bg-blue-500">Login</Button></div>
     </div>
 
     <div class="h-16 text-gray-800 flex flex-row bg-white items-center px-10 space-x-4 border-b border-gray-300 shadow">
@@ -54,10 +54,10 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
           <li><a href="#" class="block border-b-2 border-transparent hover:border-indigo-200 pb-4 mt-6 px-2 text-gray-500 hover:text-indigo-800">Menu 3</a></li>
         </ul>
       </div>
-      <div><input type="search" class="hidden md:inline-block text-indigo-900 text-xs h-8 mr-4 bg-indigo-50 border border-indigo-400 px-2" placeholder="Search" /> <Button theme={{:menu}} text_size="text-sm" background="bg-indigo-500">Login</Button></div>
+      <div><input type="search" class="hidden md:inline-block text-indigo-900 text-xs h-8 mr-4 bg-indigo-50 border border-indigo-400 px-2" placeholder="Search" /> <Button theme={:menu} text_size="text-sm" background="bg-indigo-500">Login</Button></div>
     </div>
 
-    <Breadcrumb crumbs={{[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]}} bordered=true margin="mt-3" />
+    <Breadcrumb crumbs={[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]} bordered={true} margin="mt-3" />
 
     <div class="my-2">
       <h1 class="text-4xl">Title</h1>
@@ -87,7 +87,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
     <div class="my-2 text-gray-400">
       <Icon icon="tick" />
-      <Icon icon="tick" theme={{:success}} />
+      <Icon icon="tick" theme={:success} />
       <Icon icon="cross" />
       <Icon icon="cross" colour="text-red-800" />
       <Icon icon="cross" w="w-12" h="h-12" />
@@ -135,7 +135,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
         <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
 
-    <Tabs id="surface_gallery5" style="button" theme="secondary">
+    <Tabs id="surface_gallery5" style="button" theme={:secondary}>
         <TabItem label="Properties very long menu" icon="tick">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
         </TabItem>
@@ -144,7 +144,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
         <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
 
-    <Tabs id="surface_gallery6" style="button" theme="menu" flex="flex-grow">
+    <Tabs id="surface_gallery6" style="button" theme={:menu} flex="flex-grow">
       <TabItem label="Properties very long menu" icon="tick">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
       </TabItem>
@@ -184,63 +184,63 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </Notification>
 
 
-    <Notification title="Inline action" action_location={{:inline}} class="mt-12"/>
+    <Notification title="Inline action" action_location={:inline} class="mt-12"/>
 
-    <Notification title="Icon added" icon={{:tick}} class="mt-12">
+    <Notification title="Icon added" icon={:tick} class="mt-12">
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="Bottom actions" icon={{:tick}} class="mt-12" action_location={{:bottom}}
-                  secondary_action={{"Event"}}>
+    <Notification title="Bottom actions" icon={:tick} class="mt-12" action_location={:bottom}
+                  secondary_action={"Event"}>
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="Bottom actions, with theme" icon={{:tick}} class="mt-12" action_location={{:bottom}}
-        secondary_action={{"Event"}} theme={{:alert}}>
+    <Notification title="Bottom actions, with theme" icon={:tick} class="mt-12" action_location={:bottom}
+        secondary_action={"Event"} theme={:alert}>
     Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
     Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="Bottom actions, with theme" icon={{:tick}} class="mt-12" action_location={{:bottom}}
-        secondary_action={{"Event"}} theme={{:success}}>
+    <Notification title="Bottom actions, with theme" icon={:tick} class="mt-12" action_location={:bottom}
+        secondary_action={"Event"} theme={:success}>
     Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
     Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="Bottom actions, with theme" icon={{:tick}} class="mt-12" action_location={{:bottom}}
-    secondary_action={{"Event"}} theme={{:warning}}>
+    <Notification title="Bottom actions, with theme" icon={:tick} class="mt-12" action_location={:bottom}
+    secondary_action={"Event"} theme={:warning}>
 Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
 Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
 </Notification>
 
     <Notification title="Action right, single"
-                  icon={{:tick}}
+                  icon={:tick}
                   class="mt-12"
-                  action_location={{:right}}>
+                  action_location={:right}>
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
     <Notification title="Action right, dual"
-                  icon={{:tick}}
+                  icon={:tick}
                   class="mt-12"
-                  action_location={{:right}}
-                  secondary_action={{"secondary_action"}}>
+                  action_location={:right}
+                  secondary_action={"secondary_action"}>
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="No slot, title only, action to right" icon={{:tick}} action_location={{:right}} class="mt-12 absolute top-10 right-10" />
+    <Notification title="No slot, title only, action to right" icon={:tick} action_location={:right} class="mt-12 absolute top-10 right-10" />
 
-    <Notification title="No slot, title only, no action" icon={{:tick}} class="mt-12" />
+    <Notification title="No slot, title only, no action" icon={:tick} class="mt-12" />
 
     <Notification title="No slot, title only, no action" class="mt-12" />
 
 
 
-    <Notification title="Discussion archived" icon={{:tick}} class="mt-12" action_location={{:buttom}}>
+    <Notification title="Discussion archived" icon={:tick} class="mt-12" action_location={:buttom}>
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
@@ -253,24 +253,24 @@ Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Accordion>
 
 
-    <Accordion id="faq_accordion_2" margin="my-8" theme={{:secondary}}>
+    <Accordion id="faq_accordion_2" margin="my-8" theme={:secondary}>
       <AccordionItem title="This is the title">Item 1</AccordionItem>
       <AccordionItem title="Some other item">This is the second item</AccordionItem>
     </Accordion>
 
 
-    <Accordion id="faq_accordion_3" margin="my-8" theme={{:secondary_varient}}>
+    <Accordion id="faq_accordion_3" margin="my-8" theme={:secondary_varient}>
       <AccordionItem title="This is the title">Item 1</AccordionItem>
       <AccordionItem title="Some other item">This is the second item</AccordionItem>
     </Accordion>
 
 
-      <Accordion id="faq_accordion_4" margin="my-8" theme={{:neutral}}>
+      <Accordion id="faq_accordion_4" margin="my-8" theme={:neutral}>
         <AccordionItem title="This is the title">Item 1</AccordionItem>
         <AccordionItem title="Some other item">This is the second item</AccordionItem>
       </Accordion>
 
-      <Accordion id="faq_accordion_5" margin="my-8" theme={{:tertiary}}>
+      <Accordion id="faq_accordion_5" margin="my-8" theme={:tertiary}>
         <AccordionItem title="This is the title">Item 1</AccordionItem>
         <AccordionItem title="Some other item">This is the second item</AccordionItem>
       </Accordion>
@@ -301,8 +301,8 @@ Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
 
     Footer
 
-    <Button theme={{:primary}}>Primary</Button>
-    <Button theme={{:secondary}}>Secondary</Button>
+    <Button theme={:primary}>Primary</Button>
+    <Button theme={:secondary}>Secondary</Button>
 
     </div>
 

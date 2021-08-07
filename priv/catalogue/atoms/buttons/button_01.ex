@@ -6,7 +6,7 @@ defmodule SurfaceTailwind.Catalogue.Button.Example01 do
     height: "90px"
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <Button label="Label"/>
     <Button>Slot</Button>
     """

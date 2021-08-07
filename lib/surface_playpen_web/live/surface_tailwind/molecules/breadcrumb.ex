@@ -30,21 +30,21 @@ defmodule SurfaceTailwind.Breadcrumb do
   slot default
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <div>
-      <ol class={{classes(assigns, :top), classes(assigns, :bordered, @bordered), @margin, "w-full": @full_width}} itemscope itemtype="https://schema.org/BreadcrumbList">
+      <ol class={classes(assigns, :top), classes(assigns, :bordered, @bordered), @margin, "w-full": @full_width} itemscope itemtype="https://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/" class={{classes(assigns, :link)}} itemprop="item">
+          <a href="/" class={classes(assigns, :link)} itemprop="item">
               <Icon icon="home" w="w-5" h="h-5" />
               <span class="sr-only" itemprop="name">Home</span>
           </a>
           <meta itemprop="position" content="1" />
         </li>
-        <li :for.with_index={{ {item, i} <- @crumbs }} class="flex justify-center items-center" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <div class={{"h-11 flex justify-center items-center mx-3", @separator_color}}>{{divider(@separator)}}</div>
-            <a :if={{ Map.has_key?(item, :href) }} href={{ item.href }} class={{classes(assigns, :link),"hover:underline","font-medium"}} itemprop="item"><span itemprop="name">{{ item.name }}</span></a>
-            <span :if={{ not Map.has_key?(item, :href) }} itemprop="name" class={{classes(assigns, :last_item),"font-light"}}>{{ item.name }}</span>
-            <meta itemprop="position" content={{i+2}} />
+        <li :for.with_index={{item, i} <- @crumbs} class="flex justify-center items-center" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <div class={"h-11 flex justify-center items-center mx-3", @separator_color}>{divider(@separator)}</div>
+            <a :if={Map.has_key?(item, :href)} href={item.href} class={classes(assigns, :link),"hover:underline","font-medium"} itemprop="item"><span itemprop="name">{item.name}</span></a>
+            <span :if={not Map.has_key?(item, :href)} itemprop="name" class={classes(assigns, :last_item),"font-light"}>{item.name}</span>
+            <meta itemprop="position" content={i+2} />
         </li>
       </ol>
     </div>

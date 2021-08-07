@@ -6,7 +6,7 @@ defmodule SurfaceTailwind.Catalogue.Grid.Example04 do
     height: "200px"
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     <Grid gap="gap-1" cols="grid-cols-3">
       <div class="bg-pink-100">1</div>
       <div class="bg-pink-100">2</div>

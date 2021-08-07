@@ -6,8 +6,8 @@ defmodule SurfaceTailwind.Catalogue.Button.Example03 do
     height: "90px"
 
   def render(assigns) do
-    ~H"""
-    <Button disabled={{true}}>Disabled</Button>
+    ~F"""
+    <Button disabled={true}>Disabled</Button>
     """
   end
 end

@@ -26,8 +26,8 @@
 #   slot menus, required: false
 
 #   def render(assigns) do
-#   ~H"""
-#     <h2 class="text-2xl text-pink-600">Group: {{@title}}</h2>
+#   ~F"""
+#     <h2 class="text-2xl text-pink-600">Group: {@title}</h2>
 #     <#slot name="menus" />
 #   """
 #   end

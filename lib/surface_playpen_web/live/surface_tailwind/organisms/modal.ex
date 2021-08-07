@@ -42,31 +42,31 @@ defmodule SurfaceTailwind.Modal do
   slot default
 
   def render(assigns) do
-    ~H"""
-    <div id="simple_modal" :if={{@show}}>
+    ~F"""
+    <div id="simple_modal" :if={@show}>
       <Backdrop>
 
-          <div class={{"inline-block bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 align-middle w-full sm:max-w-lg", @class}} role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+          <div class={"inline-block bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 align-middle w-full sm:max-w-lg", @class} role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 
               <div class="sm:flex sm:items-start mr-0 sm:mr-3">
 
-                <div :if={{@icon}} class={{"mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10", classes_icon(@theme)}}>
-                  <Icon icon={{@icon}} w="w-6" h="h-6" />
+                <div :if={@icon} class={"mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10", classes_icon(@theme)}>
+                  <Icon icon={@icon} w="w-6" h="h-6" />
                 </div>
 
                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
 
                   <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
-                    {{@title}}
+                    {@title}
                   </h3>
 
                   <div class="mt-2 w-full text-sm text-gray-500">
                     <p>
-                      {{@message}}
+                      {@message}
                     </p>
                     <div class="w-full max-h-96 overflow-auto overscroll-contain">
-                      <slot/>
+                      <#slot/>
 
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae justo augue. Fusce fermentum, nunc eu faucibus vehicula, risus mauris volutpat neque, eget elementum dolor ligula quis mi. Aliquam commodo dolor sed porta tempus. Integer rhoncus ultricies urna. Cras a consequat justo. Aenean ac ante odio. Nam vitae magna ultricies risus scelerisque vehicula sit amet quis turpis. Maecenas et ligula bibendum, congue quam vitae, tincidunt nunc. Phasellus tristique nisl porttitor erat maximus laoreet ut eget sem. Maecenas porta mollis pellentesque. Vestibulum posuere ullamcorper diam, ac pulvinar purus sodales vel. Ut non posuere orci. Suspendisse potenti. Pellentesque maximus libero magna, vel commodo risus vestibulum nec.
 
@@ -85,8 +85,8 @@ Integer viverra posuere lorem, a tincidunt lacus consectetur id. Aenean porttito
             </div>
 
             <div class="bg-gray-50 px-4 py-3 sm:px-6 flex flex-row-reverse space-x-reverse space-x-3">
-              <Button theme={{classes_primary_button(@theme)}} click={{@action}} >Accept</Button>
-              <Button theme={{:neutral}} click={{@secondary_action}} >Cancel</Button>
+              <Button theme={classes_primary_button(@theme)} click={@action} >Accept</Button>
+              <Button theme={:neutral} click={@secondary_action} >Cancel</Button>
             </div>
 
           </div>

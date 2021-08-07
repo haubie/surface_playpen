@@ -34,7 +34,7 @@ defmodule SurfaceTailwind.Menu do
 
 
   def render(assigns) do
-    ~H"""
+    ~F"""
     This is a menu area
     <ul class="flex flex-col max-w-sm">
     <!-- <#slot name="default" /> -->

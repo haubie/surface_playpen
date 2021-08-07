@@ -5,8 +5,8 @@ defmodule SurfacePlaypenWeb.Heading do
 
   @impl Phoenix.LiveComponent
   def render(assigns) do
-    ~H"""
-    <h1>{{ @title }}</h1>
+    ~F"""
+    <h1>{@title}</h1>
     """
   end
 end

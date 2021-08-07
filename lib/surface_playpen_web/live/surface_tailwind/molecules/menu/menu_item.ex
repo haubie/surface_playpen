@@ -37,16 +37,16 @@ defmodule SurfaceTailwind.Menu.MenuItem do
   # slot default
 
   # def render(assigns) do
-  #   ~H"""
-  #     <span :if={{@icon}} class="w-7 mr-3 flex flex-row items-center text-gray-400 group-hover:text-gray-600">
-  #       <Icon icon={{@icon}} h="h-7" w="w-7" />
+  #   ~F"""
+  #     <span :if={@icon} class="w-7 mr-3 flex flex-row items-center text-gray-400 group-hover:text-gray-600">
+  #       <Icon icon={@icon} h="h-7" w="w-7" />
   #     </span>
   #     <span class="flex-1 py-2 text-gray-700">
-  #       {{@title}}
+  #       {@title}
   #     </span>
-  #     <span :if={{@label}} class="inline-block rounded-full w-8 border border-white bg-gray-200 group-hover:bg-gray-50 px-1
+  #     <span :if={@label} class="inline-block rounded-full w-8 border border-white bg-gray-200 group-hover:bg-gray-50 px-1
   #                   text-xs flex items-center justify-center h-6 text-center">
-  #                   {{@label}}
+  #                   {@label}
   #     </span>
   #   """
   # end
