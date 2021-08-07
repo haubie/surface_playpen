@@ -72,7 +72,7 @@ defmodule SurfaceTailwind.Tabs do
               }}>
       <li :for.with_index={{ {tab,index} <- @tabs }} class={{"flex flex-row", @flex, "#{@label_width}": (@location == "left")}}>
 
-      <Button click="tab_click" value={{index}} theme={{button_class(@theme, index == @active_tab)}} class="ring-inset" alignment={{"flex justify-left", "flex-col sm:flex-row items-left w-full": (@location == "left"), "flex-row items-center justify-left min-w-max": (@location == "top")}}>
+      <Button click="tab_click" value={{index}} theme={{button_class(@theme, index == @active_tab)}} class="ring-inset" alignment={{"flex justify-left", "flex-col sm:flex-row items-left w-full": (@location == "left"), "flex-row items-center justify-left w-full min-w-max": (@location == "top")}}>
         <Icon :if={{tab.icon}} icon={{tab.icon}} class="mr-2 flex-shrink-0" aria-hidden="true" w="w-6" h="h-6"/>
         <span class="inline-block text-left align-text-bottom">{{tab.label}}</span>
       </Button>
