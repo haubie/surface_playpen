@@ -9,7 +9,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
   alias SurfaceTailwind.Accordion.AccordionItem
   alias SurfaceTailwind.Menu
   alias SurfaceTailwind.Menu.MenuItem
-  # alias SurfaceTailwind.Menu.MenuGroup
+  alias SurfaceTailwind.Menu.MenuGroup
 
 
   @impl true
@@ -67,20 +67,28 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
     <div class="my-2">
 
-   <!-- <MenuGroup title="Group">
-      <MenuItem title="Group menu item 1" label="12" icon="cross" />
-      <MenuItem title="Group menu item 1" label="12" icon="cross" />
-    </MenuGroup> -->
-
       <Menu>
+        <MenuGroup title="Atoms">
+          <MenuItem title="Group menu item 1" label="12" icon="cross" />
+          <MenuItem title="Stuff" label="12" icon="cross" />
+          <MenuItem title="Stuff" label="2" icon="minus" />
+        </MenuGroup>
+
+        <MenuGroup title="Organisms">
+          <MenuItem title="Group menu item 1" label="12" icon="cross" />
+          <MenuItem title="Stuff" label="12" icon="cross" />
+          <MenuItem title="Stuff" label="2" icon="minus" />
+        </MenuGroup>
+
+        <MenuGroup title="Molecules">
+          <MenuItem title="Group menu item 1" label="12" icon="cross" />
+          <MenuItem title="Stuff" label="12" icon="cross" />
+          <MenuItem title="Stuff" label="2" icon="minus" />
+        </MenuGroup>
+
         <MenuItem title="Stuff" label="12" icon="cross" />
+        <MenuItem title="Stuff" label="2" icon="minus" />
       </Menu>
-
-     <!-- <MenuItem title="A very very very very long menu" icon="tick" />
-      <MenuItem title="Stuff" label="2" icon="minus" />
-      <MenuItem title="A very very very very long menu" icon="tick" label="3" />
-      <MenuItem title="Stuff" /> -->
-
 
     </div>
 
@@ -305,12 +313,6 @@ Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     <Button theme={:secondary}>Secondary</Button>
 
     </div>
-
-
-
-
-
-
     """
   end
 

@@ -27,7 +27,7 @@ defmodule SurfaceTailwind.Menu do
   """
   #  slot menus
 
-  slot default
+  slot menus
 
   # slot menu_groups, required: false
 
@@ -36,8 +36,12 @@ defmodule SurfaceTailwind.Menu do
   def render(assigns) do
     ~F"""
     This is a menu area
+    <div :for.with_index={{menu,index} <- @menus} >
+    {index}
+      <#slot name="menus" index={index} />
+    </div>
     <ul class="flex flex-col max-w-sm">
-    <!-- <#slot name="default" /> -->
+
     </ul>
     """
   end

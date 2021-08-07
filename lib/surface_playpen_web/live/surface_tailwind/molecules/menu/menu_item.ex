@@ -6,7 +6,7 @@ defmodule SurfaceTailwind.Menu.MenuItem do
   parent's `menu` slot.
   """
 
-  use Surface.Component
+  use Surface.Component, slot: "menus"
   alias SurfaceTailwind.Icon
 
 
@@ -36,20 +36,22 @@ defmodule SurfaceTailwind.Menu.MenuItem do
 
   # slot default
 
-  # def render(assigns) do
-  #   ~F"""
-  #     <span :if={@icon} class="w-7 mr-3 flex flex-row items-center text-gray-400 group-hover:text-gray-600">
-  #       <Icon icon={@icon} h="h-7" w="w-7" />
-  #     </span>
-  #     <span class="flex-1 py-2 text-gray-700">
-  #       {@title}
-  #     </span>
-  #     <span :if={@label} class="inline-block rounded-full w-8 border border-white bg-gray-200 group-hover:bg-gray-50 px-1
-  #                   text-xs flex items-center justify-center h-6 text-center">
-  #                   {@label}
-  #     </span>
-  #   """
-  # end
+  def render(assigns) do
+    ~F"""
+      <div class="flex flex-row group hover:bg-gray-200 items-center max-w-sm">
+        <span :if={@icon} class="w-7 mr-3 flex flex-row items-center text-gray-400 group-hover:text-gray-600">
+          <Icon icon={@icon} h="h-7" w="w-7" />
+        </span>
+        <span class="flex-1 py-2 text-gray-700">
+          {@title}
+        </span>
+        <span :if={@label} class="inline-block rounded-full w-8 border border-white bg-gray-200 group-hover:bg-gray-50 px-1
+                      text-xs flex items-center justify-center h-6 text-center">
+                      {@label}
+        </span>
+      </div>
+    """
+  end
 
 
 end
