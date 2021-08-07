@@ -84,7 +84,7 @@ defmodule SurfaceTailwind.Theme do
         neutral: [
           background: "bg-white",
           background_hover: "",
-          text: "text-gray-900",
+          text: "text-gray-500",
           text_dark: "text-gray-900",
           light_text: "text-gray-400",
           light_text_hover: "hover:text-gray-600",
@@ -110,6 +110,7 @@ defmodule SurfaceTailwind.Theme do
         disabled: [
           background: "bg-gray-50",
           text: "text-gray-700",
+          text_light: "text-gray-400",
           contrast_text: "text-gray-400",
           border: "border-gray-200",
           ring: "ring-pink-600 focus:outline-none focus:ring-4"
