@@ -34,11 +34,11 @@ defmodule SurfaceTailwind.Menu.MenuItem do
   @doc "Item patch"
   prop patch, :string
 
-  # slot default
 
   def render(assigns) do
     ~F"""
-      <div class="flex flex-row group hover:bg-gray-200 items-center max-w-sm">
+      <li class="group flex flex-row px-2 py-1 text-sm font-medium rounded items-center hover:bg-gray-200">
+
         <span :if={@icon} class="w-7 mr-3 flex flex-row items-center text-gray-400 group-hover:text-gray-600">
           <Icon icon={@icon} h="h-7" w="w-7" />
         </span>
@@ -49,7 +49,7 @@ defmodule SurfaceTailwind.Menu.MenuItem do
                       text-xs flex items-center justify-center h-6 text-center">
                       {@label}
         </span>
-      </div>
+      </li>
     """
   end
 

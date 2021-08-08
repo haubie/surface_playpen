@@ -67,12 +67,18 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
     <div class="my-2">
 
-      <Menu>
+      <Menu title="Main menu">
+
+      <MenuItem title="Stuff" label="12" icon="cross" />
+      <MenuItem title="Stuff" label="2" icon="minus" />
+
         <MenuGroup title="Atoms">
           <MenuItem title="Group menu item 1" label="12" icon="cross" />
           <MenuItem title="Stuff" label="12" icon="cross" />
           <MenuItem title="Stuff" label="2" icon="minus" />
         </MenuGroup>
+
+
 
         <MenuGroup title="Organisms">
           <MenuItem title="Group menu item 1" label="12" icon="cross" />

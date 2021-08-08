@@ -22,12 +22,14 @@ defmodule SurfaceTailwind.Menu do
   """
   prop theme, :string, default: :primary, values: [:primary, :success, :warning, :alert, :error]
 
+  prop title, :string
+
   @doc """
   The content to be organised by the grid rules.
   """
   #  slot menus
 
-  slot menus
+  slot menus, required: true
 
   # slot menu_groups, required: false
 
@@ -35,13 +37,9 @@ defmodule SurfaceTailwind.Menu do
 
   def render(assigns) do
     ~F"""
-    This is a menu area
-    <div :for.with_index={{menu,index} <- @menus} >
-    {index}
-      <#slot name="menus" index={index} />
-    </div>
-    <ul class="flex flex-col max-w-sm">
-
+    <h2 :if={@title} class="text-md font-semibold text-indigo-900">{@title}</h2>
+    <ul class="flex flex-col max-w-sm mt-3">
+      <#slot name="menus" index={index} :for.with_index={{menu,index} <- @menus}/>
     </ul>
     """
   end

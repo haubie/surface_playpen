@@ -25,17 +25,16 @@ defmodule SurfaceTailwind.Menu.MenuGroup do
 
   prop exapandable, :boolean, default: false
 
-  slot menus, required: false
+  slot menus, required: true
 
   def render(assigns) do
   ~F"""
-    <div class="border border-gray-900">
-      <h2 class="text-sm text-indigo-600 uppercase">{@title}</h2>
-      <div :for.with_index={{menu,index} <- @menus}>
-      {index}
-        <#slot name="menus" index={index} />
-      </div>
-    </div>
+  <li class="mt-3">
+    <h2 class="text-sm text-indigo-600 uppercase mb-1.5">{@title}</h2>
+    <ul class="flex flex-col">
+        <#slot name="menus" index={index} :for.with_index={{menu,index} <- @menus}/>
+    </ul>
+  </li>
   """
   end
 
