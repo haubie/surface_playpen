@@ -30,9 +30,9 @@ defmodule SurfaceTailwind.Menu.MenuGroup do
   def render(assigns) do
   ~F"""
   <li class="mt-3">
-    <h2 class="text-sm text-indigo-600 uppercase mb-1.5">{@title}</h2>
+    <h3 class="text-sm text-indigo-600 uppercase mb-1.5 tracking-wider">{@title}</h3>
     <ul class="flex flex-col">
-        <#slot name="menus" index={index} :for.with_index={{menu,index} <- @menus}/>
+        <#slot name="menus" index={index} :for.with_index={{_menu,index} <- @menus}/>
     </ul>
   </li>
   """

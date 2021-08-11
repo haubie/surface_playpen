@@ -37,9 +37,9 @@ defmodule SurfaceTailwind.Menu do
 
   def render(assigns) do
     ~F"""
-    <h2 :if={@title} class="text-md font-semibold text-indigo-900">{@title}</h2>
+    <h2 :if={@title} class="text-lg font-semibold text-indigo-900 tracking-wide">{@title}</h2>
     <ul class="flex flex-col max-w-sm mt-3">
-      <#slot name="menus" index={index} :for.with_index={{menu,index} <- @menus}/>
+      <#slot name="menus" index={index} :for.with_index={{_menu,index} <- @menus}/>
     </ul>
     """
   end

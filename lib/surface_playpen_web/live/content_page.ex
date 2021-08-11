@@ -67,10 +67,25 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
     <div class="my-2">
 
+
+    <div>
+    <Menu title="Narrow">
+
+      <MenuItem title="Href link" label="12" icon="cross" href="https://google.com.au" opts={[target: "_blank"]} />
+      <MenuItem title="Patch to /" label="2" icon="minus" patch="/" />
+      <MenuItem title="Redirect to /" label="2" icon="minus" redirect="/" />
+    </Menu>
+    </div>
+
       <Menu title="Main menu">
 
-      <MenuItem title="Stuff" label="12" icon="cross" />
-      <MenuItem title="Stuff" label="2" icon="minus" />
+      <MenuItem title="Href link" label="12" icon="cross" href="https://google.com.au" opts={[target: "_blank"]} />
+      <MenuItem title="Patch to /" label="2" icon="minus" patch="/" />
+      <MenuItem title="Redirect to /" label="2" icon="minus" redirect="/" />
+
+      <MenuItem label="12" icon="cross" href="https://google.com.au">
+        Another link
+      </MenuItem>
 
         <MenuGroup title="Atoms">
           <MenuItem title="Group menu item 1" label="12" icon="cross" />
