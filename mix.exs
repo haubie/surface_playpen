@@ -24,7 +24,15 @@ defmodule SurfacePlaypen.MixProject do
     ]
   end
 
+  def catalogues do
+    [
+      "priv/catalogue",
+      "deps/surface/priv/catalogue"
+    ]
+  end
+
   # Specifies which paths to compile per environment.
+  defp elixirc_paths(:dev), do: ["lib"] ++ catalogues()
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
@@ -44,7 +52,8 @@ defmodule SurfacePlaypen.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:surface, "~> 0.4.0"}
+      {:surface, "~> 0.5.0"},
+      {:surface_catalogue, "~> 0.1.0", only: [:dev, :test]}
     ]
   end
 
