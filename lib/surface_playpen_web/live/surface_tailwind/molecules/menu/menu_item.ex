@@ -59,18 +59,22 @@ defmodule SurfaceTailwind.Menu.MenuItem do
           <Link to={@href} opts={@opts} method={@method} class={["group flex flex-col sm:flex-row px-2 py-1 text-sm font-medium rounded items-center hover:bg-gray-200", @class]}>
             {render_link_contents(assigns)}
           </Link>
+
         {#elseif @patch}
           <LivePatch to={@patch} opts={@opts} class={["group flex flex-col sm:flex-row px-2 py-1 text-sm font-medium rounded items-center hover:bg-gray-200", @class]}>
             {render_link_contents(assigns)}
           </LivePatch>
+
         {#elseif @redirect}
           <LiveRedirect to={@redirect} opts={@opts} class={["group flex flex-col sm:flex-row px-2 py-1 text-sm font-medium rounded items-center hover:bg-gray-200", @class]}>
             {render_link_contents(assigns)}
           </LiveRedirect>
+
         {#else}
           <Link to="" opts={@opts} method={@method} class={["group flex flex-col sm:flex-row px-2 py-1 text-sm font-medium rounded items-center hover:bg-gray-200", @class]}>
             {render_link_contents(assigns)}
           </Link>
+
         {/if}
 
       </li>

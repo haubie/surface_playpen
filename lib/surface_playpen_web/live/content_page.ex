@@ -22,97 +22,77 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     ~F"""
     <div class="mx-12 px-12 bg-gray-50">
 
+    <h1 class="mt-12 mb-3 text-xl">Alert examples</h1>
+
+    <div class="space-y-6">
+
     <Alert class="my-3">Remember to sign up!</Alert>
 
-    <div class="h-16 bg-gray-800 flex flex-row text-white items-center px-10 space-x-4">
-      <div class="flex flex-row items-center">
-        <svg id="Capa_1" class="h-10 w-10" enable-background="new 0 0 510.95 510.95" height="512" viewBox="0 0 510.95 510.95" width="512" xmlns="http://www.w3.org/2000/svg"><g><g><path d="m342.528 459.558-267.661-.088c-41.24.012-74.825-33.646-74.867-75.066-.002-19.973 7.813-38.852 22.029-52.989 14.183-14.087 33.007-21.848 53.05-21.873l88.148.074c3.215.006 6.332 1.034 8.918 2.946l146.5 108.418c3.196 2.47 7.112 4.575 11.323 6.068 4.473 1.587 8.803 2.439 12.878 2.517 10.201.207 17.245 10.362 13.822 20.011-2.066 5.825-7.617 9.995-14.14 9.982z" fill="#f03800"/></g><g><circle cx="75.013" cy="384.492" fill="#e3e7ea" r="15"/></g><g><path d="m320.028 440.71c4.77-6.266 3.719-15.869-2.83-20.739-6.913-5.635-12.459-13.331-15.507-22.689l-42.231-138.487-10.71-35.312c-.894-2.864-2.737-5.746-5.546-7.697l-70.358-52.016c-16.09-12.072-36.018-16.915-55.809-14.067-19.79 2.848-37.263 13.521-49.237 29.328-2.336 2.991-4.103 6.184-5.973 9.659-16.44 31.092-9.031 70.327 18.807 93.252.93.967 1.961 1.652 2.991 2.336l215.282 159.445c6.83 4.97 15.97 3.436 21.121-3.013z" fill="#fdbf00"/></g><g><g><g><path d="m290.956 414.08c-7.854 2.25-16.076-2.221-18.461-10.046l-77.905-255.787c-5.964-19.073-4.04-39.264 5.4-57.069 9.458-17.768 25.254-30.707 44.289-36.389 19.068-5.95 39.343-4.043 57.069 5.4 17.781 9.463 30.721 25.259 36.416 44.345l25.909 83.998c.956 3.09.883 6.406-.195 9.443l-60.877 171.617c-3.08 8.684-3.513 17.747-1.275 26.204 2.127 7.91-2.518 16.031-10.37 18.284z" fill="#00a66c"/></g></g><g><circle cx="266.211" cy="126.393" fill="#fff5f5" r="15"/></g></g><g><g><g><g><path d="m348.807 459.469-6.59.087c-7.285-.144-14.782-1.575-22.278-4.235-7.193-2.551-13.998-6.24-21.225-11.85-11.645-9.104-20.419-21.745-25.385-36.577-.096-.298-.9-3.07-.978-3.378-3.821-14.334-3.142-29.527 1.976-43.953l90.933-256.35c13.825-38.973 56.785-59.436 95.758-45.611s59.436 56.785 45.611 95.758l-90.933 256.35c-9.935 28.012-36.55 48.009-66.889 49.759z" fill="#4086f4"/></g></g></g></g><path d="m348.807 459.469c30.339-1.75 56.954-21.747 66.89-49.759l90.933-256.35c13.825-38.973-6.638-81.933-45.611-95.758l-141.08 397.719c7.496 2.659 14.993 4.091 22.278 4.234z" fill="#4175df"/><g><circle cx="345.012" cy="384.637" fill="#e3e7ea" r="15"/></g><path d="m359.149 389.652c2.77-7.808-1.315-16.382-9.122-19.152l-10.029 28.274c7.807 2.77 16.382-1.314 19.151-9.122z" fill="#e3e7ea"/><g><circle cx="435.946" cy="128.288" fill="#fff5f5" r="15"/></g><g><path d="m140.119 232.696c3.602-4.77 3.912-11.027.873-15.925-.629-1.814-2.207-3.648-3.986-4.915-4.305-3.118-9.795-3.793-14.391-1.604-2.581.994-4.697 2.472-6.448 4.715-5.254 6.732-3.82 16.154 3.012 21.123 6.55 4.871 15.969 3.438 20.94-3.394z" fill="#fff5f5"/></g><g fill="#e3e7ea"><path d="m140.119 232.696c3.602-4.77 3.912-11.027.873-15.925l-18.377-6.519c-2.581.994-4.697 2.472-6.448 4.715-5.254 6.732-3.82 16.154 3.012 21.123 6.55 4.871 15.969 3.438 20.94-3.394z"/><path d="m450.083 133.302c2.77-7.808-1.315-16.382-9.122-19.152l-10.029 28.274c7.807 2.77 16.381-1.314 19.151-9.122z"/></g></g></svg>
-        <h1 class="font-semibold text-2xl ml-2">Brand</h1>
-      </div>
-      <div class="flex-1 text-sm">
-        <ul class="flex flex-row items-center space-x-4">
-          <li><Button theme={:menu} text_size="text-sm" background="bg-gray-900">Menu 1</Button></li>
-          <li><Button theme={:menu} text_size="text-sm">Menu 2</Button></li>
-          <li><Button theme={:menu} text_size="text-sm">Menu 3</Button></li>
-        </ul>
-      </div>
-      <div><input type="search" class="text-white text-xs h-8 mr-4 bg-gray-600 border border-gray-400 px-2" placeholder="Search" /> <Button theme={:menu} text_size="text-sm" background="bg-blue-500">Login</Button></div>
+    <Alert type={:warning}>Warning alert styling.</Alert>
+
+    <Alert type={:error}>Error alert styling.</Alert>
+
+
+    <Alert border="border-8 border-blue-900 border-opacity-40"
+       background="bg-gradient-to-r from-red-100 to-indigo-100"
+       text="text-blue-900 font-semibold">
+       Error alert styling with overriding
+       of Tailwind CSS border classes.
+       <a href="#"
+          class="inline-block underline hover:no-underline">
+          More info &rarr;
+       </a>
+    </Alert>
     </div>
 
-    <div class="h-16 text-gray-800 flex flex-row bg-white items-center px-10 space-x-4 border-b border-gray-300 shadow">
-      <div class="md:hidden">
-        <button type="button" class="p-2 bg-indigo-100">M</button>
-      </div>
-      <div class="flex flex-row items-center justify-center md:justify-left flex-1 md:flex-none">
-        <svg id="Capa_1" class="h-10 w-10" enable-background="new 0 0 510.95 510.95" height="512" viewBox="0 0 510.95 510.95" width="512" xmlns="http://www.w3.org/2000/svg"><g><g><path d="m342.528 459.558-267.661-.088c-41.24.012-74.825-33.646-74.867-75.066-.002-19.973 7.813-38.852 22.029-52.989 14.183-14.087 33.007-21.848 53.05-21.873l88.148.074c3.215.006 6.332 1.034 8.918 2.946l146.5 108.418c3.196 2.47 7.112 4.575 11.323 6.068 4.473 1.587 8.803 2.439 12.878 2.517 10.201.207 17.245 10.362 13.822 20.011-2.066 5.825-7.617 9.995-14.14 9.982z" fill="#f03800"/></g><g><circle cx="75.013" cy="384.492" fill="#e3e7ea" r="15"/></g><g><path d="m320.028 440.71c4.77-6.266 3.719-15.869-2.83-20.739-6.913-5.635-12.459-13.331-15.507-22.689l-42.231-138.487-10.71-35.312c-.894-2.864-2.737-5.746-5.546-7.697l-70.358-52.016c-16.09-12.072-36.018-16.915-55.809-14.067-19.79 2.848-37.263 13.521-49.237 29.328-2.336 2.991-4.103 6.184-5.973 9.659-16.44 31.092-9.031 70.327 18.807 93.252.93.967 1.961 1.652 2.991 2.336l215.282 159.445c6.83 4.97 15.97 3.436 21.121-3.013z" fill="#fdbf00"/></g><g><g><g><path d="m290.956 414.08c-7.854 2.25-16.076-2.221-18.461-10.046l-77.905-255.787c-5.964-19.073-4.04-39.264 5.4-57.069 9.458-17.768 25.254-30.707 44.289-36.389 19.068-5.95 39.343-4.043 57.069 5.4 17.781 9.463 30.721 25.259 36.416 44.345l25.909 83.998c.956 3.09.883 6.406-.195 9.443l-60.877 171.617c-3.08 8.684-3.513 17.747-1.275 26.204 2.127 7.91-2.518 16.031-10.37 18.284z" fill="#00a66c"/></g></g><g><circle cx="266.211" cy="126.393" fill="#fff5f5" r="15"/></g></g><g><g><g><g><path d="m348.807 459.469-6.59.087c-7.285-.144-14.782-1.575-22.278-4.235-7.193-2.551-13.998-6.24-21.225-11.85-11.645-9.104-20.419-21.745-25.385-36.577-.096-.298-.9-3.07-.978-3.378-3.821-14.334-3.142-29.527 1.976-43.953l90.933-256.35c13.825-38.973 56.785-59.436 95.758-45.611s59.436 56.785 45.611 95.758l-90.933 256.35c-9.935 28.012-36.55 48.009-66.889 49.759z" fill="#4086f4"/></g></g></g></g><path d="m348.807 459.469c30.339-1.75 56.954-21.747 66.89-49.759l90.933-256.35c13.825-38.973-6.638-81.933-45.611-95.758l-141.08 397.719c7.496 2.659 14.993 4.091 22.278 4.234z" fill="#4175df"/><g><circle cx="345.012" cy="384.637" fill="#e3e7ea" r="15"/></g><path d="m359.149 389.652c2.77-7.808-1.315-16.382-9.122-19.152l-10.029 28.274c7.807 2.77 16.382-1.314 19.151-9.122z" fill="#e3e7ea"/><g><circle cx="435.946" cy="128.288" fill="#fff5f5" r="15"/></g><g><path d="m140.119 232.696c3.602-4.77 3.912-11.027.873-15.925-.629-1.814-2.207-3.648-3.986-4.915-4.305-3.118-9.795-3.793-14.391-1.604-2.581.994-4.697 2.472-6.448 4.715-5.254 6.732-3.82 16.154 3.012 21.123 6.55 4.871 15.969 3.438 20.94-3.394z" fill="#fff5f5"/></g><g fill="#e3e7ea"><path d="m140.119 232.696c3.602-4.77 3.912-11.027.873-15.925l-18.377-6.519c-2.581.994-4.697 2.472-6.448 4.715-5.254 6.732-3.82 16.154 3.012 21.123 6.55 4.871 15.969 3.438 20.94-3.394z"/><path d="m450.083 133.302c2.77-7.808-1.315-16.382-9.122-19.152l-10.029 28.274c7.807 2.77 16.381-1.314 19.151-9.122z"/></g></g></svg>
-        <h1 class="font-semibold text-2xl ml-2 hidden md:block">Brand</h1>
-      </div>
-      <div class="hidden md:block flex-1 text-sm font-semibold">
-        <ul class="flex flex-row items-center space-x-8 ml-4">
-          <li><a href="#" class="block border-b-2 border-indigo-500 hover:border-indigo-200 pb-4 mt-6 px-2 hover:text-indigo-800">Menu 1</a></li>
-          <li><a href="#" class="block border-b-2 border-transparent hover:border-indigo-200 pb-4 mt-6 px-2 text-gray-500 hover:text-indigo-800">Menu 2</a></li>
-          <li><a href="#" class="block border-b-2 border-transparent hover:border-indigo-200 pb-4 mt-6 px-2 text-gray-500 hover:text-indigo-800">Menu 3</a></li>
-        </ul>
-      </div>
-      <div><input type="search" class="hidden md:inline-block text-indigo-900 text-xs h-8 mr-4 bg-indigo-50 border border-indigo-400 px-2" placeholder="Search" /> <Button theme={:menu} text_size="text-sm" background="bg-indigo-500">Login</Button></div>
-    </div>
 
-    <Breadcrumb crumbs={[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Marius"}]} bordered={true} margin="mt-3" />
 
-    <div class="my-2">
-      <h1 class="text-4xl">Title</h1>
-      <span class="text-lg">Subtext here</span>
-    </div>
+    <h1 class="mt-12 mb-3 text-xl">Breadcrumb example</h1>
+    <Breadcrumb crumbs={[%{name: "About", href: "/about"}, %{name: "Team", href: "/about/team"}, %{name: "Person name"}]} bordered={true} margin="mt-3" />
 
 
     <div class="my-2">
 
+    <h1 class="mt-12 mb-3 text-xl">Vertical menu example</h1>
 
     <div>
-    <Menu title="Narrow">
+    <Menu title="Menu title">
 
-      <MenuItem title="Href link" label="12" icon="cross" href="https://google.com.au" opts={[target: "_blank"]} />
-      <MenuItem title="Patch to /" label="2" icon="minus" patch="/" />
-      <MenuItem title="Redirect to /" label="2" icon="minus" redirect="/" />
+      <MenuItem title="Href link" label="12" icon="home" href="https://google.com.au" opts={[target: "_blank"]} />
+      <MenuItem title="Patch to /" label="2" icon="new_page" patch="/" />
+      <MenuItem title="Redirect to /" label="2" icon="home" redirect="/" />
     </Menu>
     </div>
 
-      <Menu title="Main menu">
+    <h1 class="mt-12 mb-3 text-xl">Vertical menu examples with Menu Groups</h1>
 
-      <MenuItem title="Href link" label="12" icon="cross" href="https://google.com.au" opts={[target: "_blank"]} />
-      <MenuItem title="Patch to /" label="2" icon="minus" patch="/" />
-      <MenuItem title="Redirect to /" label="2" icon="minus" redirect="/" />
 
-      <MenuItem label="12" icon="cross" href="https://google.com.au">
-        Another link
-      </MenuItem>
+      <Menu>
 
         <MenuGroup title="Atoms">
-          <MenuItem title="Group menu item 1" label="12" icon="cross" />
-          <MenuItem title="Stuff" label="12" icon="cross" />
-          <MenuItem title="Stuff" label="2" icon="minus" />
+          <MenuItem title="Group menu item 1" label="12" icon="home" />
+          <MenuItem title="Stuff" label="12" icon="home" />
+          <MenuItem title="Stuff" label="2" icon="home" />
         </MenuGroup>
 
-
-
         <MenuGroup title="Organisms">
-          <MenuItem title="Group menu item 1" label="12" icon="cross" />
-          <MenuItem title="Stuff" label="12" icon="cross" />
-          <MenuItem title="Stuff" label="2" icon="minus" />
+          <MenuItem title="Group menu item 1" label="12" icon="new_page" />
+          <MenuItem title="Stuff" label="12" icon="new_page" />
+          <MenuItem title="Stuff" label="2" icon="new_page" />
         </MenuGroup>
 
         <MenuGroup title="Molecules">
-          <MenuItem title="Group menu item 1" label="12" icon="cross" />
-          <MenuItem title="Stuff" label="12" icon="cross" />
-          <MenuItem title="Stuff" label="2" icon="minus" />
+          <MenuItem title="Group menu item 1" label="12" icon="new_page" />
+          <MenuItem title="Stuff" label="12" icon="new_page" />
+          <MenuItem title="Stuff" label="2" icon="new_page" />
         </MenuGroup>
 
-        <MenuItem title="Stuff" label="12" icon="cross" />
-        <MenuItem title="Stuff" label="2" icon="minus" />
       </Menu>
 
     </div>
 
+
+    <h1 class="mt-12 mb-3 text-xl">Icon examples</h1>
 
     <div class="my-2 text-gray-400">
       <Icon icon="tick" />
@@ -124,7 +104,8 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
     <div class="flex flex-col space-y-6">
 
-    Larger text
+    <h1 class="mt-12 mb-3 text-xl">Overiding tabs with larger text</h1>
+
     <Tabs id="surface_gallery3232" tab_text="text-xl" tab_font="font-thin">
         <TabItem label="Properties very long menu" icon="tick">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
@@ -134,6 +115,8 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
         <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
 
+
+    <h1 class="mt-12 mb-3 text-xl">Default tabs, plus adding an icon to first</h1>
 
 
     <Tabs id="surface_gallery">
@@ -145,6 +128,10 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
         <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
 
+
+    <h1 class="mt-12 mb-3 text-xl">Tabs growing to the width</h1>
+
+
     <Tabs id="surface_gallery2" flex="flex-grow">
         <TabItem label="Properties very long menu" icon="tick">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
@@ -155,6 +142,8 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </Tabs>
 
 
+    <h1 class="mt-12 mb-3 text-xl">Button style tabs</h1>
+
     <Tabs id="surface_gallery3" style="button">
         <TabItem label="Properties very long menu" icon="tick">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
@@ -164,6 +153,8 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
         <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
 
+    <h1 class="mt-12 mb-3 text-xl">Applying the :secondary theme to the tabs</h1>
+
     <Tabs id="surface_gallery5" style="button" theme={:secondary}>
         <TabItem label="Properties very long menu" icon="tick">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
@@ -172,6 +163,8 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
         <TabItem label="Events">Hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.1</TabItem>
         <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
+
+    <h1 class="mt-12 mb-3 text-xl">Applying the :menu theme to the tabs</h1>
 
     <Tabs id="surface_gallery6" style="button" theme={:menu} flex="flex-grow">
       <TabItem label="Properties very long menu" icon="tick">
@@ -183,8 +176,11 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
     </Tabs>
 
 
+    <h1 class="mt-12 mb-3 text-xl">Setting tab location to the left</h1>
+
+
     <Tabs id="surface_gallery7" location="left">
-      <TabItem label="Properties" icon="tick">
+      <TabItem label="Properties">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
       </TabItem>
       <TabItem label="Slots">Hello 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum. </TabItem>
@@ -192,8 +188,11 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
       <TabItem label="Functions">Functions Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.</TabItem>
     </Tabs>
 
+
+    <h1 class="mt-12 mb-3 text-xl">Setting tab location to the left with button style</h1>
+
     <Tabs id="surface_gallery8" location="left" style="button">
-      <TabItem label="Properties very long menu" icon="tick">
+      <TabItem label="Properties very long menu">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum.
       </TabItem>
       <TabItem label="Slots">Hello 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nibh metus, pharetra id velit nec, ultrices ornare ipsum. Vestibulum id ultricies diam, luctus accumsan felis. Nulla nec feugiat ipsum. Mauris ultricies consectetur arcu at varius. Pellentesque maximus iaculis metus venenatis tempor. Pellentesque nulla libero, aliquet at magna sit amet, laoreet vestibulum diam. Aenean auctor efficitur est ut rhoncus. Curabitur mollis lorem arcu, a lobortis leo sagittis ut. Donec faucibus diam ut gravida tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam neque eu malesuada condimentum. </TabItem>
@@ -204,7 +203,7 @@ defmodule SurfacePlaypenWeb.ContentPageLive do
 
 
 
-
+    <h1 class="mt-12 mb-3 text-xl">Notification examples</h1>
 
 
     <Notification title="No actions" class="mt-12">
@@ -261,8 +260,8 @@ Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
 
-    <Notification title="No slot, title only, action to right" icon={:tick} action_location={:right} class="mt-12 absolute top-10 right-10" />
-
+    <!-- <Notification title="No slot, title only, action to right" icon={:tick} action_location={:right} class="mt-12 absolute top-10 right-10" />
+    -->
     <Notification title="No slot, title only, no action" icon={:tick} class="mt-12" />
 
     <Notification title="No slot, title only, no action" class="mt-12" />
@@ -273,6 +272,8 @@ Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
       Quisque pede tellus, dictum eget, dapibus ac, sodales dictum, lectus.
       Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Notification>
+
+    <h1 class="mt-12 mb-3 text-xl">Accordion example, in a Grid container layout</h1>
 
     <Grid gap="gap-8">
 
@@ -306,32 +307,6 @@ Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu.
     </Grid>
 
 
-
-
-
-
-
-
-
-
-
-
-    Column
-
-       Content area
-
-       Aside
-
-    <h1 class="text-xl">Related articles</h1>
-    <Grid>
-      <div>Article</div>
-    </Grid>
-
-
-    Footer
-
-    <Button theme={:primary}>Primary</Button>
-    <Button theme={:secondary}>Secondary</Button>
 
     </div>
     """
